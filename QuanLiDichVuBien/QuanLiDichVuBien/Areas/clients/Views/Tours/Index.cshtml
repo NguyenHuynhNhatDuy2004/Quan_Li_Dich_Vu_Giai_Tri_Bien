@@ -1,0 +1,472 @@
+﻿@model QuanLiDichVuBien.Areas.clients.Models.ViewModels.ToursPageViewModel
+
+@{
+    Layout = "~/Areas/clients/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Dịch Vụ Giải Trí Biển";
+}
+
+<partial name="~/Areas/clients/Views/Shared/Blocks/_HeaderHome.cshtml" />
+<partial name="~/Areas/clients/Views/Shared/Blocks/_BannerHome.cshtml" />
+
+<!-- Tour Grid Area start -->
+<section class="tour-grid-page py-100 rel z-1">
+    <div class="container">
+
+        <div class="row">
+
+            <!-- ===== SIDEBAR ===== -->
+            <div class="col-lg-3 col-md-6 col-sm-10 rmb-75">
+
+                <div class="shop-sidebar">
+
+                    <!-- CLEAR -->
+                    <div class="div_filter_clear mb-30">
+
+                        <button class="clear_filter" name="btn_clear">
+
+                            <a href="@Url.Action("Index", "Tours", new { area = "clients" })">
+                                Xóa bộ lọc
+                            </a>
+
+                        </button>
+
+                    </div>
+
+                    <!-- GIÁ -->
+                    <div class="widget widget-filter"
+                         data-aos="fade-up"
+                         data-aos-delay="50"
+                         data-aos-duration="1500"
+                         data-aos-offset="50">
+
+                        <h6 class="widget-title">
+                            Lọc theo giá
+                        </h6>
+
+                        <div class="price-filter-wrap">
+
+                            <div class="price-slider-range"></div>
+
+                            <div class="price">
+
+                                <span>Giá </span>
+
+                                <input type="text"
+                                       id="price"
+                                       readonly>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- LOẠI DỊCH VỤ -->
+                    <div class="widget widget-activity"
+                         data-aos="fade-up"
+                         data-aos-duration="1500"
+                         data-aos-offset="50">
+
+                        <h6 class="widget-title">
+                            Loại dịch vụ
+                        </h6>
+
+                        <ul class="radio-filter">
+
+                            <li>
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="service"
+                                       id="jetski"
+                                       value="jetski">
+
+                                <label for="jetski">
+                                    Jetski <span>12</span>
+                                </label>
+                            </li>
+
+                            <li>
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="service"
+                                       id="flyboard"
+                                       value="flyboard">
+
+                                <label for="flyboard">
+                                    Flyboard <span>8</span>
+                                </label>
+                            </li>
+
+                            <li>
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="service"
+                                       id="cano"
+                                       value="cano">
+
+                                <label for="cano">
+                                    Cano biển <span>10</span>
+                                </label>
+                            </li>
+
+                            <li>
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="service"
+                                       id="sup"
+                                       value="sup">
+
+                                <label for="sup">
+                                    Chèo SUP <span>6</span>
+                                </label>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <!-- ĐÁNH GIÁ -->
+                    <div class="widget widget-reviews"
+                         data-aos="fade-up"
+                         data-aos-duration="1500"
+                         data-aos-offset="50">
+
+                        <h6 class="widget-title">
+                            Đánh giá
+                        </h6>
+
+                        <ul class="radio-filter">
+
+                            @for (int star = 5; star >= 1; star--)
+                            {
+                                <li>
+
+                                    <input class="form-check-input"
+                                           type="radio"
+                                           name="filter_star"
+                                           id="@(star)star"
+                                           value="@star">
+
+                                    <label for="@(star)star">
+
+                                        <span class="ratting">
+
+                                            @for (int i = 1; i <= 5; i++)
+                                            {
+                                                <i class="fas fa-star @(i > star ? "white" : "")"></i>
+                                            }
+
+                                        </span>
+
+                                    </label>
+
+                                </li>
+                            }
+
+                        </ul>
+
+                    </div>
+
+                    <!-- THỜI GIAN -->
+                    <div class="widget widget-duration"
+                         data-aos="fade-up"
+                         data-aos-duration="1500"
+                         data-aos-offset="50">
+
+                        <h6 class="widget-title">
+                            Thời lượng
+                        </h6>
+
+                        <ul class="radio-filter">
+
+                            <li>
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="duration"
+                                       id="30p"
+                                       value="30p">
+
+                                <label for="30p">
+                                    30 phút
+                                </label>
+                            </li>
+
+                            <li>
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="duration"
+                                       id="60p"
+                                       value="60p">
+
+                                <label for="60p">
+                                    60 phút
+                                </label>
+                            </li>
+
+                            <li>
+                                <input class="form-check-input"
+                                       type="radio"
+                                       name="duration"
+                                       id="halfday"
+                                       value="halfday">
+
+                                <label for="halfday">
+                                    Nửa ngày
+                                </label>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <!-- DỊCH VỤ PHỔ BIẾN -->
+                    @if (Model.PopularTours.Any())
+                    {
+                        <div class="widget widget-tour"
+                             data-aos="fade-up"
+                             data-aos-duration="1500"
+                             data-aos-offset="50">
+
+                            <h6 class="widget-title">
+                                Dịch vụ phổ biến
+                            </h6>
+
+                            @foreach (var tour in Model.PopularTours)
+                            {
+                                <div class="destination-item tour-grid style-three bgc-lighter">
+
+                                    <div class="image">
+
+                                        <span class="badge">
+                                            Hot
+                                        </span>
+
+                                        <img src="~/admin/assets/images/gallery-tours/@tour.Images[0]"
+                                             alt="Tour">
+
+                                    </div>
+
+                                    <div class="content">
+
+                                        <div class="destination-header">
+
+                                            <span class="location">
+
+                                                <i class="fal fa-map-marker-alt"></i>
+
+                                                @tour.Destination
+
+                                            </span>
+
+                                            <div class="ratting">
+
+                                                <i class="fas fa-star"></i>
+
+                                                <span>@tour.Rating</span>
+
+                                            </div>
+
+                                        </div>
+
+                                        <h6>
+
+                                            <a href="@Url.Action("Index", "TourDetail", new { area = "clients", id = tour.TourId })">
+
+                                                @tour.Title
+
+                                            </a>
+
+                                        </h6>
+
+                                    </div>
+
+                                </div>
+                            }
+
+                        </div>
+                    }
+
+                </div>
+
+                <!-- CTA -->
+                <div class="widget widget-cta mt-30"
+                     data-aos="fade-up"
+                     data-aos-duration="1500"
+                     data-aos-offset="50">
+
+                    <div class="content text-white">
+
+                        <span class="h6">
+                            Trải Nghiệm Biển Đà Nẵng
+                        </span>
+
+                        <h3>
+                            Dịch vụ giải trí biển hấp dẫn nhất
+                        </h3>
+
+                        <a href="@Url.Action("Index", "Tours", new { area = "clients" })"
+                           class="theme-btn style-two bgc-secondary">
+
+                            <span data-hover="Đặt ngay">
+                                Đặt ngay
+                            </span>
+
+                            <i class="fal fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                    <div class="image">
+
+                        <img src="~/clients/assets/images/widgets/cta-widget.png"
+                             alt="CTA">
+
+                    </div>
+
+                    <div class="cta-shape">
+
+                        <img src="~/clients/assets/images/widgets/cta-shape2.png"
+                             alt="Shape">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ===== DANH SÁCH DỊCH VỤ ===== -->
+            <div class="col-lg-9">
+
+                <div class="shop-shorter rel z-3 mb-20">
+
+                    <div class="sort-text mb-15 me-4 me-xl-auto">
+                        Dịch vụ tìm thấy
+                    </div>
+
+                    <div class="sort-text mb-15 me-4">
+                        Sắp xếp theo
+                    </div>
+
+                    <select id="sorting_tours">
+
+                        <option value="default" selected>
+                            Sắp xếp theo
+                        </option>
+
+                        <option value="new">
+                            Mới nhất
+                        </option>
+
+                        <option value="old">
+                            Cũ nhất
+                        </option>
+
+                        <option value="hight-to-low">
+                            Giá cao đến thấp
+                        </option>
+
+                        <option value="low-to-high">
+                            Giá thấp đến cao
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- TOURS -->
+                <div class="tour-grid-wrap">
+
+                    <div class="row" id="tours-container">
+
+                        @foreach (var tour in Model.Tours)
+                        {
+                            <div class="col-md-4 mb-4">
+
+                                <div class="destination-item tour-grid">
+
+                                    <div class="image">
+
+                                        <img src="~/admin/assets/images/gallery-tours/@tour.Images[0]"
+                                             alt="@tour.Title">
+
+                                    </div>
+
+                                    <div class="content">
+
+                                        <div class="destination-header">
+
+                                            <span class="location">
+
+                                                <i class="fal fa-map-marker-alt"></i>
+
+                                                @tour.Destination
+
+                                            </span>
+
+                                            <div class="ratting">
+
+                                                <i class="fas fa-star"></i>
+
+                                                <span>@tour.Rating</span>
+
+                                            </div>
+
+                                        </div>
+
+                                        <h6>
+
+                                            <a href="@Url.Action("Index", "TourDetail", new { area = "clients", id = tour.TourId })">
+
+                                                @tour.Title
+
+                                            </a>
+
+                                        </h6>
+
+                                        <span class="time">
+                                            @tour.Time
+                                        </span>
+
+                                    </div>
+
+                                    <div class="destination-footer">
+
+                                        <span class="price">
+
+                                            <span>
+                                                @tour.PriceAdult.ToString("N0") VNĐ
+                                            </span>
+
+                                            / người
+
+                                        </span>
+
+                                        <a href="@Url.Action("Index", "TourDetail", new { area = "clients", id = tour.TourId })"
+                                           class="read-more">
+
+                                            Xem ngay
+                                            <i class="fal fa-angle-right"></i>
+
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        }
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- Tour Grid Area end -->
+
+<partial name="~/Areas/clients/Views/Shared/Blocks/_FooterHome.cshtml" />

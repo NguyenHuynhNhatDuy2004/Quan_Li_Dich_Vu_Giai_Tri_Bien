@@ -1,0 +1,176 @@
+﻿@{
+    Layout = "~/Areas/clients/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Chi tiết bài viết";
+}
+
+<partial name="~/Areas/clients/Views/Shared/Blocks/_HeaderHome.cshtml" />
+<partial name="~/Areas/clients/Views/Shared/Blocks/_BannerHome.cshtml" />
+
+<section class="blog-details-area py-100 rel z-1">
+    <div class="container">
+        <div class="row">
+
+            <!-- BLOG DETAILS -->
+            <div class="col-lg-8">
+                <div class="blog-details-content"
+                     data-aos="fade-up"
+                     data-aos-duration="1500">
+
+                    <div class="image mb-30">
+                        <img src="~/admin/assets/images/gallery-tours/cau-rong-da-nang_1732897880.png"
+                             alt="Blog Details">
+                    </div>
+
+                    <ul class="blog-meta mb-20">
+                        <li><i class="far fa-user"></i> Admin</li>
+                        <li><i class="far fa-calendar-alt"></i> 25 Oct 2024</li>
+                    </ul>
+
+                    <h2 class="title">
+                        Top hoạt động giải trí biển hấp dẫn nhất tại Đà Nẵng
+                    </h2>
+
+                    <p>
+                        Đà Nẵng không chỉ nổi tiếng với những bãi biển đẹp mà còn là thiên đường
+                        giải trí biển dành cho du khách yêu thích trải nghiệm và khám phá.
+                        Từ mô tô nước Jetski, flyboard, chèo SUP đến lặn ngắm san hô tại bán đảo Sơn Trà,
+                        tất cả đều mang đến cảm giác cực kỳ thú vị và đáng nhớ.
+                    </p>
+
+                    <blockquote>
+                        "Biển Đà Nẵng không chỉ để ngắm nhìn, mà còn để trải nghiệm và tận hưởng."
+                    </blockquote>
+
+                    <p>
+                        Nếu yêu thích cảm giác mạnh, bạn có thể thử Jetski hoặc flyboard tại biển Mỹ Khê.
+                        Với những ai muốn thư giãn, chèo SUP vào lúc bình minh là lựa chọn hoàn hảo.
+                        Ngoài ra, các tour cano khám phá đảo và lặn biển tại Sơn Trà cũng đang rất được yêu thích.
+                    </p>
+
+                    <p>
+                        Buổi chiều là thời điểm lý tưởng để tận hưởng không khí biển mát mẻ,
+                        tham gia các hoạt động team building hoặc thưởng thức hải sản tươi sống
+                        tại các nhà hàng ven biển Đà Nẵng.
+                    </p>
+                </div>
+
+                <!-- COMMENT -->
+                <div class="comment-form mt-60">
+                    <h3 class="mb-30">Để lại bình luận</h3>
+
+                    <form action="#" method="post">
+
+                        @Html.AntiForgeryToken()
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="Họ và tên"
+                                       required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <input type="email"
+                                       class="form-control"
+                                       placeholder="Email"
+                                       required>
+                            </div>
+
+                            <div class="col-md-12">
+                                <textarea class="form-control"
+                                          rows="5"
+                                          placeholder="Nội dung bình luận"
+                                          required></textarea>
+                            </div>
+
+                            <div class="col-md-12">
+                                <button type="submit"
+                                        class="theme-btn style-two">
+
+                                    <span>Gửi bình luận</span>
+                                    <i class="fal fa-arrow-right"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <div class="col-lg-4">
+                <div class="main-sidebar rmt-75">
+
+                    <!-- SEARCH -->
+                    <div class="widget widget-search">
+                        <form action="#">
+                            <input type="text"
+                                   placeholder="Tìm kiếm bài viết..."
+                                   required>
+
+                            <button type="submit">
+                                <i class="far fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- RECENT POSTS -->
+                    <div class="widget widget-recent-posts">
+
+                        <h4 class="widget-title">
+                            Bài viết mới nhất
+                        </h4>
+
+                        <ul>
+
+                            <li>
+                                <div class="image">
+                                    <img src="~/admin/assets/images/gallery-tours/hon-gam-ghi-phu-quoc_1732895313.jpg"
+                                         alt="Recent">
+                                </div>
+
+                                <div class="content">
+                                    <h6>
+                                        <a href="#">
+                                            5 trải nghiệm biển không thể bỏ lỡ tại Đà Nẵng
+                                        </a>
+                                    </h6>
+
+                                    <span class="date">
+                                        15 Oct 2024
+                                    </span>
+                                </div>
+                            </li>
+
+                            <li class="mt-20">
+                                <div class="image">
+                                    <img src="~/admin/assets/images/gallery-tours/vien-hai-duong-hoc-nha-trang_1734022645.jpg"
+                                         alt="Recent">
+                                </div>
+
+                                <div class="content">
+                                    <h6>
+                                        <a href="#">
+                                            Kinh nghiệm lặn ngắm san hô tại Sơn Trà
+                                        </a>
+                                    </h6>
+
+                                    <span class="date">
+                                        10 Oct 2024
+                                    </span>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<partial name="~/Areas/clients/Views/Shared/Blocks/_FooterHome.cshtml" />

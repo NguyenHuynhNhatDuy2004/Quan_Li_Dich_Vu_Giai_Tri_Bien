@@ -1,0 +1,165 @@
+﻿@model QuanLiDichVuBien.Areas.clients.Models.ViewModels.TourBookedViewModel
+@{
+    Layout = "~/Areas/clients/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Tour đã đặt";
+    string hideCancelClass = Model.HideCancelButton ? "hide" : "";
+}
+
+<section class="container" style="margin-top:50px; margin-bottom:100px">
+
+    <form asp-action="CancelBooking" asp-controller="TourBooked" asp-area="clients"
+          method="post" class="booking-container">
+        @Html.AntiForgeryToken()
+
+        <!-- Thông tin liên lạc -->
+        <div class="booking-info">
+            <h2 class="booking-header">Thông Tin Liên Lạc</h2>
+            <div class="booking__infor">
+
+                <div class="form-group">
+                    <label for="username">Họ và tên*</label>
+                    <input type="text" id="username" name="fullName"
+                           value="@Model.FullName" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email"
+                           value="@Model.Email" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="tel">Số điện thoại*</label>
+                    <input type="tel" id="tel" name="tel"
+                           value="@Model.PhoneNumber" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Địa chỉ*</label>
+                    <input type="text" id="address" name="address"
+                           value="@Model.Address" readonly>
+                </div>
+
+            </div>
+
+            <!-- Điều khoản -->
+            <div class="privacy-section">
+                <p>
+                    Bằng cách nhấp chuột vào nút "ĐỒNG Ý" dưới đây, Khách hàng đồng ý rằng
+                    các điều kiện điều khoản này sẽ được áp dụng. Vui lòng đọc kỹ điều kiện
+                    điều khoản trước khi lựa chọn sử dụng dịch vụ của Travela.
+                </p>
+                <div class="privacy-checkbox">
+                    <input type="checkbox" id="agree" name="agree" checked disabled>
+                    <label for="agree">
+                        Tôi đã đọc và đồng ý với
+                        <a href="#" target="_blank">Điều khoản thanh toán</a>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phương thức thanh toán -->
+            <h2 class="booking-header">Phương Thức Thanh Toán</h2>
+
+            <label class="payment-option">
+                <input type="radio" value="office-payment"
+                       @(Model.PaymentMethod == "office-payment" ? "checked" : "") disabled>
+                <img src="~/clients/assets/images/contact/icon.png" alt="Office Payment">
+                Thanh toán tại văn phòng
+            </label>
+
+            <label class="payment-option">
+                <input type="radio" value="paypal-payment"
+                       @(Model.PaymentMethod == "paypal-payment" ? "checked" : "") disabled>
+                <img src="~/clients/assets/images/booking/cong-thanh-toan-paypal.jpg" alt="PayPal">
+                Thanh toán bằng PayPal
+            </label>
+
+            <label class="payment-option">
+                <input type="radio" value="momo-payment"
+                       @(Model.PaymentMethod == "momo-payment" ? "checked" : "") disabled>
+                <img src="~/clients/assets/images/booking/thanh-toan-momo.jpg" alt="MoMo">
+                Thanh toán bằng Momo
+            </label>
+        </div>
+
+        <!-- Tóm tắt đơn hàng -->
+        <div class="booking-summary">
+            <div class="summary-section">
+                <div>
+                    <p>Mã tour : @Model.TourId</p>
+                    <input type="hidden" name="tourId" id="tourId" value="@Model.TourId">
+                    <h5 class="widget-title">@Model.Title</h5>
+                    <p>Ngày khởi hành : @Model.StartDate.ToString("dd-MM-yyyy")</p>
+                    <p>Ngày kết thúc : @Model.EndDate.ToString("dd-MM-yyyy")</p>
+                </div>
+
+                <div class="order-summary"
+                     style="border-bottom: 1px solid #d6d6d6; margin-bottom:20px">
+
+                    <div class="summary-item">
+                        <span>Người lớn:</span>
+                        <div>
+                            <span class="quantity__adults-booked">@Model.NumAdults</span>
+                            <input type="hidden" name="quantityAdults"
+                                   value="@Model.NumAdults">
+                            <span>X</span>
+                            <span class="total-price-booked">
+                                @Model.PriceAdult.ToString("N0") VNĐ
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="summary-item">
+                        <span>Trẻ em:</span>
+                        <div>
+                            <span class="quantity__children-booked">@Model.NumChildren</span>
+                            <input type="hidden" name="quantityChildren"
+                                   value="@Model.NumChildren">
+                            <span>X</span>
+                            <span class="total-price-booked">
+                                @Model.PriceChild.ToString("N0") VNĐ
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="summary-item">
+                        <span>Giảm giá:</span>
+                        <div>
+                            <span class="total-price-booked">
+                                @Model.Discount.ToString("N0") VNĐ
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="summary-item total-price-booked">
+                        <span>Tổng cộng:</span>
+                        <span>@Model.TotalPrice.ToString("N0") VNĐ</span>
+                    </div>
+                </div>
+
+                <input type="hidden" name="bookingId" value="@Model.BookingId">
+
+                @if (Model.BookingStatus == "f")
+                {
+                    <!-- Tour hoàn thành → hiện nút Đánh giá -->
+                    <a href="@Url.Action("Index", "TourDetail", new { area = "clients", id = Model.TourId })"
+                       class="booking-btn"
+                       style="display:inline-block; text-align:center;">
+                        Đánh giá
+                    </a>
+                }
+                else
+                {
+                    <!-- Tour chưa hoàn thành → nút Hủy (ẩn nếu < 7 ngày) -->
+                    <button type="submit"
+                            class="booking-btn btn-cancel-booking @hideCancelClass">
+                        Hủy Tour
+                    </button>
+                }
+
+            </div>
+        </div>
+    </form>
+
+</section>

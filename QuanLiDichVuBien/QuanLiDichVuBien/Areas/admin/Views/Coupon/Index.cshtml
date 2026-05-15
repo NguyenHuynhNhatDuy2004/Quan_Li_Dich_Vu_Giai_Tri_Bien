@@ -1,0 +1,262 @@
+﻿@* Areas/admin/Views/Coupon/Index.cshtml *@
+@model List<QuanLiDichVuBien.Areas.admin.Models.CouponViewModel>
+@using QuanLiDichVuBien.Areas.admin.Models
+@{
+    ViewData["Title"] = "Quản lý mã giảm giá";
+}
+
+<div class="page-header">
+    <h3 class="fw-bold mb-3">Quản lý mã giảm giá</h3>
+    <ul class="breadcrumbs mb-3">
+        <li class="nav-home">
+            <a asp-area="Admin" asp-controller="Home" asp-action="Index">
+                <i class="icon-home"></i>
+            </a>
+        </li>
+        <li class="separator"><i class="icon-arrow-right"></i></li>
+        <li class="nav-item active">Mã giảm giá</li>
+    </ul>
+</div>
+
+@* Thống kê nhanh *@
+<div class="row mb-3">
+    <div class="col-sm-6 col-md-3">
+        <div class="card card-stats card-round">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-icon">
+                        <div class="icon-big text-center icon-success bubble-shadow-small">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                    </div>
+                    <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                            <p class="card-category">Tổng mã</p>
+                            <h4 class="card-title">@Model.Count</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="card card-stats card-round">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-icon">
+                        <div class="icon-big text-center icon-primary bubble-shadow-small">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                    <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                            <p class="card-category">Đang hoạt động</p>
+                            <h4 class="card-title">@Model.Count(c => c.IsValid)</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="card card-stats card-round">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-icon">
+                        <div class="icon-big text-center icon-warning bubble-shadow-small">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                    </div>
+                    <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                            <p class="card-category">Hết hạn</p>
+                            <h4 class="card-title">@Model.Count(c => c.IsExpired)</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="card card-stats card-round">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-icon">
+                        <div class="icon-big text-center icon-danger bubble-shadow-small">
+                            <i class="fas fa-ban"></i>
+                        </div>
+                    </div>
+                    <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                            <p class="card-category">Hết lượt dùng</p>
+                            <h4 class="card-title">@Model.Count(c => c.RemainingQuantity == 0)</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex align-items-center">
+                    <h4 class="card-title">Danh sách mã giảm giá</h4>
+                    <a class="btn btn-primary btn-round ms-auto"
+                       asp-area="Admin"
+                       asp-action="Create"
+                       asp-controller="Coupon">
+                        <i class="fa fa-plus"></i>
+                        Tạo mã mới
+                    </a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="add-row" class="display table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Mã</th>
+                                <th>Loại</th>
+                                <th>Giá trị</th>
+                                <th>Đơn tối thiểu</th>
+                                <th>Thời hạn</th>
+                                <th>Lượt dùng</th>
+                                <th>Trạng thái</th>
+                                <th style="width:12%">Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.Count; i++)
+                            {
+                                var c = Model[i];
+                                <tr>
+                                    <td>@(i + 1)</td>
+                                    <td>
+                                        <span class="badge bg-secondary fs-6 font-monospace">
+                                            @c.Code
+                                        </span>
+                                        @if (!string.IsNullOrEmpty(c.Description))
+                                        {
+                                            <br />
+                                            <small class="text-muted">@c.Description</small>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (c.DiscountType == DiscountType.Percent)
+                                        {
+                                            <span class="badge bg-info">Phần trăm</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-purple" style="background:#6f42c1">Số tiền</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (c.DiscountType == DiscountType.Percent)
+                                        {
+                                            <strong class="text-success">@c.DiscountValue%</strong>
+                                            @if (c.MaxDiscountAmount.HasValue)
+                                            {
+                                                <br />
+                                                <small class="text-muted">
+                                                    Tối đa @string.Format("{0:N0}₫", c.MaxDiscountAmount)
+                                                </small>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <strong class="text-success">
+                                                @string.Format("{0:N0}₫", c.DiscountValue)
+                                            </strong>
+                                        }
+                                    </td>
+                                    <td>@string.Format("{0:N0}₫", c.MinOrderAmount)</td>
+                                    <td>
+                                        <small>
+                                            <i class="fas fa-calendar-alt text-muted"></i>
+                                            @c.StartDate.ToString("dd/MM/yyyy")
+                                        </small>
+                                        <br />
+                                        <small>
+                                            <i class="fas fa-calendar-times text-muted"></i>
+                                            @c.EndDate.ToString("dd/MM/yyyy")
+                                        </small>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-1">
+                                            <span>@c.UsedCount / @c.Quantity</span>
+                                        </div>
+                                        <div class="progress mt-1" style="height:5px; min-width:80px">
+                                            @{
+                                                int percent = c.Quantity > 0
+                                                ? (int)((double)c.UsedCount / c.Quantity * 100)
+                                                : 0;
+                                                string barColor = percent >= 100 ? "bg-danger"
+                                                : percent >= 70 ? "bg-warning" : "bg-success";
+                                            }
+                                            <div class="progress-bar @barColor"
+                                                 style="width:@percent%"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        @if (c.IsExpired)
+                                        {
+                                            <span class="badge bg-secondary">Hết hạn</span>
+                                        }
+                                        else if (!c.IsActive)
+                                        {
+                                            <span class="badge bg-danger">Đã tắt</span>
+                                        }
+                                        else if (c.RemainingQuantity == 0)
+                                        {
+                                            <span class="badge bg-warning text-dark">Hết lượt</span>
+                                        }
+                                        else if (c.StartDate > DateTime.Now)
+                                        {
+                                            <span class="badge bg-info">Chưa bắt đầu</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-success">Đang hoạt động</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        <div class="form-button-action">
+                                            <a class="btn btn-link btn-primary" title="Chỉnh sửa"
+                                               asp-area="Admin"
+                                               asp-controller="Coupon"
+                                               asp-action="Update"
+                                               asp-route-CouponID="@c.CouponID">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                            <a class="btn btn-link @(c.IsActive ? "btn-warning" : "btn-success")"
+                                               title="@(c.IsActive ? "Tắt mã" : "Bật mã")"
+                                               asp-area="Admin"
+                                               asp-controller="Coupon"
+                                               asp-action="ToggleActive"
+                                               asp-route-CouponID="@c.CouponID">
+                                                <i class="fas @(c.IsActive ? "fa-toggle-on" : "fa-toggle-off")"></i>
+                                            </a>
+                                            <a class="btn btn-link btn-danger" title="Xóa"
+                                               asp-area="Admin"
+                                               asp-controller="Coupon"
+                                               asp-action="Delete"
+                                               asp-route-CouponID="@c.CouponID"
+                                               onclick="return confirm('Xóa mã @c.Code?')">
+                                                <i class="fa fa-times"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

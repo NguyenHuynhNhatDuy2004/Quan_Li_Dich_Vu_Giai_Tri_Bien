@@ -1,0 +1,241 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|d:\\abc\\doantotnghiep_quanlidichvubien_nguyenhuynhnhatduy\\quanlidichvubien\\quanlidichvubien\\areas\\clients\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|solutionrelative:quanlidichvubien\\areas\\clients\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|d:\\abc\\doantotnghiep_quanlidichvubien_nguyenhuynhnhatduy\\quanlidichvubien\\quanlidichvubien\\areas\\admin\\views\\account\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|solutionrelative:quanlidichvubien\\areas\\admin\\views\\account\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|d:\\abc\\doantotnghiep_quanlidichvubien_nguyenhuynhnhatduy\\quanlidichvubien\\quanlidichvubien\\areas\\admin\\views\\account\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|solutionrelative:quanlidichvubien\\areas\\admin\\views\\account\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|d:\\abc\\doantotnghiep_quanlidichvubien_nguyenhuynhnhatduy\\quanlidichvubien\\quanlidichvubien\\areas\\admin\\views\\coupon\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|solutionrelative:quanlidichvubien\\areas\\admin\\views\\coupon\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|d:\\abc\\doantotnghiep_quanlidichvubien_nguyenhuynhnhatduy\\quanlidichvubien\\quanlidichvubien\\areas\\admin\\models\\accountviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|solutionrelative:quanlidichvubien\\areas\\admin\\models\\accountviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|d:\\abc\\doantotnghiep_quanlidichvubien_nguyenhuynhnhatduy\\quanlidichvubien\\quanlidichvubien\\areas\\admin\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|solutionrelative:quanlidichvubien\\areas\\admin\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|d:\\abc\\doantotnghiep_quanlidichvubien_nguyenhuynhnhatduy\\quanlidichvubien\\quanlidichvubien\\areas\\admin\\views\\coupon\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|solutionrelative:quanlidichvubien\\areas\\admin\\views\\coupon\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|d:\\abc\\doantotnghiep_quanlidichvubien_nguyenhuynhnhatduy\\quanlidichvubien\\quanlidichvubien\\areas\\admin\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|solutionrelative:quanlidichvubien\\areas\\admin\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|d:\\abc\\doantotnghiep_quanlidichvubien_nguyenhuynhnhatduy\\quanlidichvubien\\quanlidichvubien\\areas\\admin\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|solutionrelative:quanlidichvubien\\areas\\admin\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|d:\\abc\\doantotnghiep_quanlidichvubien_nguyenhuynhnhatduy\\quanlidichvubien\\quanlidichvubien\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|solutionrelative:quanlidichvubien\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|d:\\abc\\doantotnghiep_quanlidichvubien_nguyenhuynhnhatduy\\quanlidichvubien\\quanlidichvubien\\areas\\admin\\views\\coupon\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|solutionrelative:quanlidichvubien\\areas\\admin\\views\\coupon\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|d:\\abc\\doantotnghiep_quanlidichvubien_nguyenhuynhnhatduy\\quanlidichvubien\\quanlidichvubien\\areas\\admin\\controllers\\couponcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|solutionrelative:quanlidichvubien\\areas\\admin\\controllers\\couponcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|d:\\abc\\doantotnghiep_quanlidichvubien_nguyenhuynhnhatduy\\quanlidichvubien\\quanlidichvubien\\areas\\admin\\models\\couponviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4871C821-6E4F-4527-967F-6D0D8A227CDD}|QuanLiDichVuBien\\QuanLiDichVuBien.csproj|solutionrelative:quanlidichvubien\\areas\\admin\\models\\couponviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RoleController.cs",
+              "DocumentMoniker": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Controllers\\RoleController.cs",
+              "RelativeDocumentMoniker": "QuanLiDichVuBien\\Areas\\admin\\Controllers\\RoleController.cs",
+              "ToolTip": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Controllers\\RoleController.cs",
+              "RelativeToolTip": "QuanLiDichVuBien\\Areas\\admin\\Controllers\\RoleController.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAADwv3MAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T13:23:46.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "QuanLiDichVuBien\\Areas\\admin\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "QuanLiDichVuBien\\Areas\\admin\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAYwGIAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T13:17:27.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChangePassword.cshtml",
+              "DocumentMoniker": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Views\\Account\\ChangePassword.cshtml",
+              "RelativeDocumentMoniker": "QuanLiDichVuBien\\Areas\\admin\\Views\\Account\\ChangePassword.cshtml",
+              "ToolTip": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Views\\Account\\ChangePassword.cshtml",
+              "RelativeToolTip": "QuanLiDichVuBien\\Areas\\admin\\Views\\Account\\ChangePassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-15T13:17:19.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Views\\Account\\Index.cshtml",
+              "RelativeDocumentMoniker": "QuanLiDichVuBien\\Areas\\admin\\Views\\Account\\Index.cshtml",
+              "ToolTip": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Views\\Account\\Index.cshtml",
+              "RelativeToolTip": "QuanLiDichVuBien\\Areas\\admin\\Views\\Account\\Index.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-15T13:17:10.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountViewModel.cs",
+              "DocumentMoniker": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Models\\AccountViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLiDichVuBien\\Areas\\admin\\Models\\AccountViewModel.cs",
+              "ToolTip": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Models\\AccountViewModel.cs",
+              "RelativeToolTip": "QuanLiDichVuBien\\Areas\\admin\\Models\\AccountViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T13:16:53.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "QuanLiDichVuBien\\Areas\\admin\\Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "QuanLiDichVuBien\\Areas\\admin\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-15T13:16:09.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\clients\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "QuanLiDichVuBien\\Areas\\clients\\Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\clients\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "QuanLiDichVuBien\\Areas\\clients\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-15T13:14:42.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "QuanLiDichVuBien\\Areas\\admin\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "QuanLiDichVuBien\\Areas\\admin\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAM0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-15T13:08:58.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Update.cshtml",
+              "DocumentMoniker": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Views\\Coupon\\Update.cshtml",
+              "RelativeDocumentMoniker": "QuanLiDichVuBien\\Areas\\admin\\Views\\Coupon\\Update.cshtml",
+              "ToolTip": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Views\\Coupon\\Update.cshtml",
+              "RelativeToolTip": "QuanLiDichVuBien\\Areas\\admin\\Views\\Coupon\\Update.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-15T13:08:40.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Views\\Coupon\\Create.cshtml",
+              "RelativeDocumentMoniker": "QuanLiDichVuBien\\Areas\\admin\\Views\\Coupon\\Create.cshtml",
+              "ToolTip": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Views\\Coupon\\Create.cshtml",
+              "RelativeToolTip": "QuanLiDichVuBien\\Areas\\admin\\Views\\Coupon\\Create.cshtml",
+              "ViewState": "AgIAACsAAAAAAAAAAADwvzsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-15T13:05:44.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Views\\Coupon\\Index.cshtml",
+              "RelativeDocumentMoniker": "QuanLiDichVuBien\\Areas\\admin\\Views\\Coupon\\Index.cshtml",
+              "ToolTip": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Views\\Coupon\\Index.cshtml",
+              "RelativeToolTip": "QuanLiDichVuBien\\Areas\\admin\\Views\\Coupon\\Index.cshtml",
+              "ViewState": "AgIAAOsAAAAAAAAAAAAkwAUBAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-15T13:05:04.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CouponController.cs",
+              "DocumentMoniker": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Controllers\\CouponController.cs",
+              "RelativeDocumentMoniker": "QuanLiDichVuBien\\Areas\\admin\\Controllers\\CouponController.cs",
+              "ToolTip": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Controllers\\CouponController.cs",
+              "RelativeToolTip": "QuanLiDichVuBien\\Areas\\admin\\Controllers\\CouponController.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAAwEMAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T13:04:35.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CouponViewModel.cs",
+              "DocumentMoniker": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Models\\CouponViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLiDichVuBien\\Areas\\admin\\Models\\CouponViewModel.cs",
+              "ToolTip": "D:\\abc\\DoAnTotNghiep_QuanLiDichVuBien_NguyenHuynhNhatDuy\\QuanLiDichVuBien\\QuanLiDichVuBien\\Areas\\admin\\Models\\CouponViewModel.cs",
+              "RelativeToolTip": "QuanLiDichVuBien\\Areas\\admin\\Models\\CouponViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T13:04:06.66Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

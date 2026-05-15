@@ -1,0 +1,445 @@
+﻿@{
+    Layout = "~/Areas/clients/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Trang chủ Travela";
+}
+
+<partial name="~/Areas/clients/Views/Shared/Blocks/_BannerHome.cshtml" />
+
+<div class="form-back-drop"></div>
+
+<section class="destinations-area bgc-black pt-100 pb-70 rel z-1">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="section-title text-white text-center counter-text-wrap mb-70" data-aos="fade-up"
+                     data-aos-duration="1500" data-aos-offset="50">
+                    <h2>Khám phá thiên đường giải trí biển Đà Nẵng</h2>
+                    <p>
+                        Trải nghiệm các hoạt động biển hấp dẫn, tour nghỉ dưỡng và dịch vụ vui chơi đẳng cấp tại thành phố biển xinh đẹp
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+
+            <!-- TOUR 1 -->
+            <div class="col-xxl-3 col-xl-4 col-md-6" style="margin-bottom: 30px">
+                <div class="destination-item block_tours" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
+                    <div class="image">
+                        <div class="ratting"><i class="fas fa-star"></i> 4.9</div>
+                        <a href="#" class="heart"><i class="fas fa-heart"></i></a>
+                        <img src="~/clients/assets/images/gallery-tours/destination1.jpg" alt="Tour biển">
+                    </div>
+
+                    <div class="content">
+                        <span class="location">
+                            <i class="fal fa-map-marker-alt"></i>Bán đảo Sơn Trà
+                        </span>
+
+                        <h5>
+                            <a asp-area="clients" asp-controller="Tours" asp-action="Details" asp-route-id="1">
+                                Tour Cano & Lặn Ngắm San Hô Sơn Trà
+                            </a>
+                        </h5>
+
+                        <span class="time">1 Ngày</span>
+                    </div>
+
+                    <div class="destination-footer">
+                        <span class="price">
+                            <span>1.500.000</span> VND / người
+                        </span>
+
+                        <a asp-area="clients" asp-controller="Tours" asp-action="Details" asp-route-id="1"
+                           class="read-more">
+                            Đặt ngay <i class="fal fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOUR 2 -->
+            <div class="col-xxl-3 col-xl-4 col-md-6" style="margin-bottom: 30px">
+                <div class="destination-item block_tours" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
+                    <div class="image">
+                        <div class="ratting"><i class="fas fa-star"></i> 5.0</div>
+                        <a href="#" class="heart"><i class="fas fa-heart"></i></a>
+                        <img src="~/clients/assets/images/gallery-tours/destination2.jpg" alt="Jetski">
+                    </div>
+
+                    <div class="content">
+                        <span class="location">
+                            <i class="fal fa-map-marker-alt"></i>Biển Mỹ Khê
+                        </span>
+
+                        <h5>
+                            <a asp-area="clients" asp-controller="Tours" asp-action="Details" asp-route-id="2">
+                                Trải Nghiệm Jetski & Flyboard
+                            </a>
+                        </h5>
+
+                        <span class="time">Nửa Ngày</span>
+                    </div>
+
+                    <div class="destination-footer">
+                        <span class="price">
+                            <span>1.200.000</span> VND / người
+                        </span>
+
+                        <a asp-area="clients" asp-controller="Tours" asp-action="Details" asp-route-id="2"
+                           class="read-more">
+                            Đặt ngay <i class="fal fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="about-us-area py-100 rpb-90 rel z-1">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-xl-5 col-lg-6">
+                <div class="about-us-content rmb-55" data-aos="fade-left"
+                     data-aos-duration="1500" data-aos-offset="50">
+
+                    <div class="section-title mb-25">
+                        <h2>
+                            Trải nghiệm giải trí biển an toàn và đẳng cấp tại Đà Nẵng
+                        </h2>
+                    </div>
+
+                    <p>
+                        Travela mang đến các hoạt động giải trí biển hiện đại như lặn biển,
+                        chèo SUP, mô tô nước, flyboard và tour khám phá đảo với đội ngũ chuyên nghiệp.
+                    </p>
+
+                    <div class="divider counter-text-wrap mt-45 mb-55">
+                        <span>
+                            Chúng tôi có
+                            <span>
+                                <span class="count-text plus" data-speed="3000" data-stop="5">0</span>
+                                Năm
+                            </span>
+                            kinh nghiệm
+                        </span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="counter-item counter-text-wrap">
+                                <span class="count-text k-plus" data-speed="3000" data-stop="3">0</span>
+                                <span class="counter-title">Dịch vụ biển nổi bật</span>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="counter-item counter-text-wrap">
+                                <span class="count-text m-plus" data-speed="3000" data-stop="9">0</span>
+                                <span class="counter-title">Khách du lịch trải nghiệm</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a asp-area="clients"
+                       asp-controller="Destination"
+                       asp-action="Index"
+                       class="theme-btn mt-10 style-two">
+
+                        <span data-hover="Khám phá Dịch vụ">
+                            Khám phá Dịch vụ
+                        </span>
+
+                        <i class="fal fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-xl-7 col-lg-6"
+                 data-aos="fade-right"
+                 data-aos-duration="1500"
+                 data-aos-offset="50">
+
+                <div class="about-us-image">
+
+                    @for (int i = 1; i <= 7; i++)
+                    {
+                        <div class="shape">
+                            <img src="~/clients/assets/images/about/shape@(i).png" alt="Shape">
+                        </div>
+                    }
+
+                    <img src="~/clients/assets/images/about/about.png" alt="About">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="popular-destinations-area rel z-1">
+    <div class="container-fluid">
+        <div class="popular-destinations-wrap br-20 bgc-lighter pt-100 pb-70">
+
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="section-title text-center counter-text-wrap mb-70"
+                         data-aos="fade-up"
+                         data-aos-duration="1500"
+                         data-aos-offset="50">
+
+                        <h2>Những bãi biển nổi bật tại Đà Nẵng</h2>
+
+                        <p>
+                            Trải nghiệm các địa điểm du lịch biển hấp dẫn và hiện đại nhất
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row justify-content-center">
+
+                    <!-- BIỂN MỸ KHÊ -->
+                    <div class="col-xl-3 col-md-6">
+                        <div class="destination-item style-two"
+                             data-aos="flip-up"
+                             data-aos-duration="1500"
+                             data-aos-offset="50">
+
+                            <div class="image">
+                                <a href="#" class="heart">
+                                    <i class="fas fa-heart"></i>
+                                </a>
+
+                                <img src="~/clients/assets/images/destinations/destination1.jpg"
+                                     alt="Biển Mỹ Khê">
+                            </div>
+
+                            <div class="content">
+                                <h6><a href="#">Biển Mỹ Khê</a></h6>
+
+                                <span class="time">
+                                    Hơn 20 hoạt động giải trí biển hấp dẫn
+                                </span>
+
+                                <a href="#" class="more">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SƠN TRÀ -->
+                    <div class="col-md-6">
+                        <div class="destination-item style-two"
+                             data-aos="flip-up"
+                             data-aos-delay="200"
+                             data-aos-duration="1500"
+                             data-aos-offset="50">
+
+                            <div class="image">
+                                <a href="#" class="heart">
+                                    <i class="fas fa-heart"></i>
+                                </a>
+
+                                <img src="~/clients/assets/images/destinations/destination3.jpg"
+                                     alt="Sơn Trà">
+                            </div>
+
+                            <div class="content">
+                                <h6><a href="#">Bán đảo Sơn Trà</a></h6>
+
+                                <span class="time">
+                                    Tour cano, lặn biển và khám phá thiên nhiên
+                                </span>
+
+                                <a href="#" class="more">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="features-area pt-100 pb-45 rel z-1">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-xl-6">
+                <div class="features-content-part mb-55"
+                     data-aos="fade-left"
+                     data-aos-duration="1500"
+                     data-aos-offset="50">
+
+                    <div class="section-title mb-60">
+                        <h2>
+                            Những hoạt động giải trí biển được yêu thích nhất tại Đà Nẵng
+                        </h2>
+                    </div>
+
+                    <div class="features-customer-box">
+                        <div class="image">
+                            <img src="~/clients/assets/images/features/features-box.jpg" alt="Features">
+                        </div>
+
+                        <div class="content">
+
+                            <div class="feature-authors mb-15">
+                                <img src="~/clients/assets/images/features/feature-author1.jpg" alt="Author">
+                                <img src="~/clients/assets/images/features/feature-author2.jpg" alt="Author">
+                                <img src="~/clients/assets/images/features/feature-author3.jpg" alt="Author">
+                                <span>4k+</span>
+                            </div>
+
+                            <h6>850K+ Khách hàng hài lòng</h6>
+
+                            <div class="divider style-two counter-text-wrap my-25">
+                                <span>
+                                    <span class="count-text plus" data-speed="3000" data-stop="5">0</span>
+                                    Năm
+                                </span>
+                            </div>
+
+                            <p>
+                                Chúng tôi luôn mang đến trải nghiệm giải trí biển an toàn,
+                                chuyên nghiệp và đáng nhớ cho du khách.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6"
+                 data-aos="fade-right"
+                 data-aos-duration="1500"
+                 data-aos-offset="50">
+
+                <div class="row pb-25">
+
+                    <div class="col-md-6">
+                        <div class="feature-item">
+                            <div class="icon">
+                                <i class="flaticon-tent"></i>
+                            </div>
+
+                            <div class="content">
+                                <h5>
+                                    <a asp-area="clients"
+                                       asp-controller="Tours"
+                                       asp-action="Index">
+                                        Chèo SUP trên biển
+                                    </a>
+                                </h5>
+
+                                <p>
+                                    Trải nghiệm chèo SUP thư giãn trên làn nước trong xanh tại biển Mỹ Khê
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="feature-item mt-20">
+                            <div class="icon">
+                                <i class="flaticon-tent"></i>
+                            </div>
+
+                            <div class="content">
+                                <h5>
+                                    <a asp-area="clients"
+                                       asp-controller="Tours"
+                                       asp-action="Index">
+                                        Mô tô nước Jetski
+                                    </a>
+                                </h5>
+
+                                <p>
+                                    Tận hưởng cảm giác tốc độ và chinh phục những con sóng cùng Jetski
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="blog-area py-70 rel z-1">
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="section-title text-center counter-text-wrap mb-70"
+                     data-aos="fade-up"
+                     data-aos-duration="1500"
+                     data-aos-offset="50">
+
+                    <h2>Cẩm nang du lịch biển Đà Nẵng</h2>
+
+                    <p>
+                        Khám phá những kinh nghiệm du lịch biển thú vị dành cho bạn
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-xl-4 col-md-6">
+                <div class="blog-item"
+                     data-aos="fade-up"
+                     data-aos-duration="1500"
+                     data-aos-offset="50">
+
+                    <div class="content">
+
+                        <a href="#" class="category">Du lịch biển</a>
+
+                        <h5>
+                            <a href="#">
+                                Top 10 hoạt động giải trí biển không thể bỏ lỡ tại Đà Nẵng
+                            </a>
+                        </h5>
+
+                        <ul class="blog-meta">
+                            <li>
+                                <i class="far fa-calendar-alt"></i>
+                                25 February 2024
+                            </li>
+
+                            <li>
+                                <i class="far fa-comments"></i>
+                                5 Comments
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="image">
+                        <img src="~/clients/assets/images/blog/blog1.jpg" alt="Blog">
+                    </div>
+
+                    <a href="#" class="theme-btn">
+                        <span data-hover="Đọc thêm">Đọc thêm</span>
+                        <i class="fal fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<partial name="~/Areas/clients/Views/Shared/Blocks/_FooterHome.cshtml" />

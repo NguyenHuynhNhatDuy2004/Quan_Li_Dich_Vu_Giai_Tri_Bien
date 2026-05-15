@@ -1,0 +1,49 @@
+﻿@model QuanLiDichVuBien.Areas.clients.Models.ViewModels.TourDetailViewModel
+
+<div class="tour-reviews mt-40 mb-50">
+    <h3>Đánh giá (@Model.ReviewCount)</h3>
+
+    <!-- Tóm tắt điểm trung bình -->
+    <div class="review-summary mb-30">
+        <div class="avg-star">
+            <span class="score">@Model.AverageStar</span>
+            <div class="stars">
+                @for (int i = 0; i < 5; i++)
+                {
+                    <i class="fas fa-star @(i >= (int)Model.AverageStar ? "white" : "")"></i>
+                }
+            </div>
+            <span class="count">(@Model.ReviewCount đánh giá)</span>
+        </div>
+    </div>
+
+    <!-- Danh sách review -->
+    @if (Model.Reviews.Any())
+    {
+        @foreach (var review in Model.Reviews)
+        {
+            <div class="review-item mb-25">
+                <div class="review-header d-flex align-items-center mb-10">
+                    <div class="reviewer-info me-3">
+                        <strong>@review.UserName</strong>
+                        <small class="text-muted ms-2">
+                            @review.CreatedAt.ToString("dd/MM/yyyy")
+                        </small>
+                    </div>
+                    <div class="ratting ms-auto">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            <i class="fas fa-star @(i > review.Rating ? "white" : "")"></i>
+                        }
+                    </div>
+                </div>
+                <p>@review.Comment</p>
+                <hr>
+            </div>
+        }
+    }
+    else
+    {
+        <p class="text-muted">Chưa có đánh giá nào. Hãy là người đầu tiên!</p>
+    }
+</div>

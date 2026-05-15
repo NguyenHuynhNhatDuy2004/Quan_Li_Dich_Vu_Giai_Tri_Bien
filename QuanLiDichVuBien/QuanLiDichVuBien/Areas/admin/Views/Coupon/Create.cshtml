@@ -1,0 +1,200 @@
+﻿@* Areas/admin/Views/Coupon/Create.cshtml *@
+@model QuanLiDichVuBien.Areas.admin.Models.CouponViewModel
+@using QuanLiDichVuBien.Areas.admin.Models
+@{
+    ViewData["Title"] = "Tạo mã giảm giá";
+    bool isEdit = Model.CouponID != Guid.Empty;
+}
+
+<div class="page-header">
+    <h3 class="fw-bold mb-3">@(isEdit ? "Cập nhật" : "Tạo") mã giảm giá</h3>
+    <ul class="breadcrumbs mb-3">
+        <li class="nav-home">
+            <a asp-area="Admin" asp-controller="Home" asp-action="Index">
+                <i class="icon-home"></i>
+            </a>
+        </li>
+        <li class="separator"><i class="icon-arrow-right"></i></li>
+        <li class="nav-item">
+            <a asp-area="Admin" asp-controller="Coupon" asp-action="Index">Mã giảm giá</a>
+        </li>
+        <li class="separator"><i class="icon-arrow-right"></i></li>
+        <li class="nav-item active">@(isEdit ? "Cập nhật" : "Tạo mới")</li>
+    </ul>
+</div>
+
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">
+                    <i class="fas fa-tag me-2"></i>
+                    @(isEdit ? "Cập nhật mã" : "Tạo mã mới")
+                </h4>
+            </div>
+            <div class="card-body">
+                <form asp-area="Admin"
+                      asp-controller="Coupon"
+                      asp-action="@(isEdit ? "Update" : "Create")"
+                      method="post">
+                    @Html.AntiForgeryToken()
+
+                    @if (isEdit)
+                    {
+                        <input type="hidden" asp-for="CouponID" />
+                        <input type="hidden" asp-for="UsedCount" />
+                        <input type="hidden" asp-for="CreateAt" />
+                    }
+
+                    <div class="row">
+                        {{! Mã giảm giá }}
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Code" class="form-label fw-bold"></label>
+                            @if (isEdit)
+                            {
+                                <input asp-for="Code" class="form-control text-uppercase" placeholder="VD: SUMMER20" readonly />
+                            }
+                            else
+                            {
+                                <input asp-for="Code" class="form-control text-uppercase" placeholder="VD: SUMMER20" />
+                            }
+                            <span asp-validation-for="Code" class="text-danger small"></span>
+                        </div>
+
+                        {{! Loại giảm giá }}
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="DiscountType" class="form-label fw-bold"></label>
+                            <select asp-for="DiscountType" class="form-select" id="discountTypeSelect">
+                                <option value="0">Phần trăm (%)</option>
+                                <option value="1">Số tiền (₫)</option>
+                            </select>
+                            <span asp-validation-for="DiscountType" class="text-danger small"></span>
+                        </div>
+
+                        {{! Giá trị giảm }}
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="DiscountValue" class="form-label fw-bold"></label>
+                            <div class="input-group">
+                                <input asp-for="DiscountValue"
+                                       type="number"
+                                       class="form-control"
+                                       placeholder="0" />
+                                <span class="input-group-text" id="discountUnit">%</span>
+                            </div>
+                            <span asp-validation-for="DiscountValue" class="text-danger small"></span>
+                        </div>
+
+                        {{! Giảm tối đa (chỉ hiện khi %) }}
+                        <div class="col-md-6 mb-3" id="maxDiscountGroup">
+                            <label asp-for="MaxDiscountAmount" class="form-label fw-bold"></label>
+                            <div class="input-group">
+                                <input asp-for="MaxDiscountAmount"
+                                       type="number"
+                                       class="form-control"
+                                       placeholder="Để trống = không giới hạn" />
+                                <span class="input-group-text">₫</span>
+                            </div>
+                            <span asp-validation-for="MaxDiscountAmount" class="text-danger small"></span>
+                        </div>
+
+                        {{! Đơn tối thiểu }}
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="MinOrderAmount" class="form-label fw-bold"></label>
+                            <div class="input-group">
+                                <input asp-for="MinOrderAmount"
+                                       type="number"
+                                       class="form-control"
+                                       placeholder="0" />
+                                <span class="input-group-text">₫</span>
+                            </div>
+                            <span asp-validation-for="MinOrderAmount" class="text-danger small"></span>
+                        </div>
+
+                        {{! Số lượng }}
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Quantity" class="form-label fw-bold"></label>
+                            <input asp-for="Quantity"
+                                   type="number"
+                                   class="form-control"
+                                   placeholder="100" />
+                            <span asp-validation-for="Quantity" class="text-danger small"></span>
+                        </div>
+
+                        {{! Ngày bắt đầu }}
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="StartDate" class="form-label fw-bold"></label>
+                            <input asp-for="StartDate"
+                                   type="date"
+                                   class="form-control"
+                                   value="@Model.StartDate.ToString("yyyy-MM-dd")" />
+                            <span asp-validation-for="StartDate" class="text-danger small"></span>
+                        </div>
+
+                        {{! Ngày kết thúc }}
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="EndDate" class="form-label fw-bold"></label>
+                            <input asp-for="EndDate"
+                                   type="date"
+                                   class="form-control"
+                                   value="@Model.EndDate.ToString("yyyy-MM-dd")" />
+                            <span asp-validation-for="EndDate" class="text-danger small"></span>
+                        </div>
+
+                        {{! Mô tả }}
+                        <div class="col-md-12 mb-3">
+                            <label asp-for="Description" class="form-label fw-bold"></label>
+                            <textarea asp-for="Description"
+                                      class="form-control"
+                                      rows="2"
+                                      placeholder="Mô tả ngắn về mã giảm giá..."></textarea>
+                        </div>
+
+                        {{! Kích hoạt }}
+                        <div class="col-md-12 mb-3">
+                            <div class="form-check form-switch">
+                                <input asp-for="IsActive"
+                                       class="form-check-input"
+                                       type="checkbox"
+                                       role="switch" />
+                                <label asp-for="IsActive" class="form-check-label fw-bold">
+                                    Kích hoạt mã
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-save me-1"></i>
+                            @(isEdit ? "Cập nhật" : "Tạo mã")
+                        </button>
+                        <a asp-area="Admin"
+                           asp-controller="Coupon"
+                           asp-action="Index"
+                           class="btn btn-secondary">
+                            <i class="fa fa-arrow-left me-1"></i>
+                            Quay lại
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Script {
+    <script>
+        const typeSelect = document.getElementById('discountTypeSelect');
+        const maxGroup   = document.getElementById('maxDiscountGroup');
+        const unitSpan   = document.getElementById('discountUnit');
+
+        function toggleDiscountType() {
+            const isPercent = typeSelect.value === '0';
+            maxGroup.style.display = isPercent ? 'block' : 'none';
+            unitSpan.textContent   = isPercent ? '%' : '₫';
+        }
+
+        typeSelect.addEventListener('change', toggleDiscountType);
+        toggleDiscountType(); // Chạy lúc load
+    </script>
+}

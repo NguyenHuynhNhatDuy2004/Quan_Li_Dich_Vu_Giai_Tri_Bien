@@ -1,0 +1,206 @@
+﻿@using Microsoft.AspNetCore.Http
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>@ViewData["Title"] - BookingTour Admin Dashboard</title>
+
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+    <link rel="icon" href="~/admin/assets/images/img/kaiadmin/favicon.png" type="image/x-icon" />
+
+    <!-- Fonts and icons -->
+    <script src="~/admin/assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+        WebFont.load({
+            google: { "families": ["Public Sans:300,400,500,600,700"] },
+            custom: {
+                "families": ["Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
+                urls: ['/admin/assets/css/fonts.min.css']
+            },
+            active: function () {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="~/admin/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/admin/assets/css/plugins.min.css">
+    <link rel="stylesheet" href="~/admin/assets/css/kaiadmin.min.css">
+
+    @RenderSection("css", required: false)
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar" data-background-color="dark">
+            <div class="sidebar-logo">
+                <div class="logo-header" data-background-color="dark">
+                    <a asp-area="admin" asp-controller="Home" asp-action="Index" class="logo">
+                        <img src="~/admin/assets/images/img/kaiadmin/logo_light.png" alt="navbar brand" class="navbar-brand" height="20" />
+                    </a>
+                    <div class="nav-toggle">
+                        <button class="btn btn-toggle toggle-sidebar"><i class="gg-menu-right"></i></button>
+                        <button class="btn btn-toggle sidenav-toggler"><i class="gg-menu-left"></i></button>
+                    </div>
+                    <button class="topbar-toggler more"><i class="gg-more-vertical-alt"></i></button>
+                </div>
+            </div>
+
+            <div class="sidebar-wrapper scrollbar scrollbar-inner">
+                <div class="sidebar-content">
+                    <ul class="nav nav-secondary">
+                        <!-- Dashboard -->
+                        <li class="nav-item @(ViewData["ActivePage"]?.ToString() == "Dashboard" ? "active" : "")">
+                            <a asp-area="admin" asp-controller="Home" asp-action="Index">
+                                <i class="fas fa-home"></i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-section">
+                            <span class="sidebar-mini-icon"><i class="fa fa-ellipsis-h"></i></span>
+                            <h4 class="text-section">Components</h4>
+                        </li>
+
+                        <!-- Quản lý người dùng -->
+                        @{
+                            var isUserActive = ViewData["ActivePage"]?.ToString() == "UserManager";
+                        }
+                        <li class="nav-item @(isUserActive ? "active" : "")">
+                            <a data-bs-toggle="collapse" href="#userManagerMenu">
+                                <i class="fas fa-users"></i>
+                                <p>Quản lý Người Dùng</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse @(isUserActive ? "show" : "")" id="userManagerMenu">
+                                <ul class="nav nav-collapse">
+                                    <li><a asp-area="admin" asp-controller="Employee" asp-action="Index"><span class="sub-item">Quản lý Nhân viên</span></a></li>
+                                    <li><a asp-area="admin" asp-controller="Customer" asp-action="Index"><span class="sub-item">Quản lý Khách hàng</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- Quản lý Tour -->
+                        @{
+                            var isTourActive = ViewData["ActivePage"]?.ToString() == "TourManager";
+                        }
+                        <li class="nav-item @(isTourActive ? "active" : "")">
+                            <a data-bs-toggle="collapse" href="#tourManagerMenu">
+                                <i class="far fa-list-alt"></i>
+                                <p>Quản lý Tour</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse @(isTourActive ? "show" : "")" id="tourManagerMenu">
+                                <ul class="nav nav-collapse">
+                                    <li><a asp-area="admin" asp-controller="Coupon" asp-action="Index"><span class="sub-item">Quản lý Mã Giảm Giá</span></a></li>
+                                    <li><a asp-area="admin" asp-controller="Hotel" asp-action="Index"><span class="sub-item">Quản lý Khách sạn</span></a></li>
+                                    <li><a asp-area="admin" asp-controller="Tour" asp-action="Index"><span class="sub-item">Quản lý Tour</span></a></li>
+                                    <li><a asp-area="admin" asp-controller="Booking" asp-action="Index"><span class="sub-item">Quản lý Booking</span></a></li>
+                                    <li><a asp-area="admin" asp-controller="Payment" asp-action="Index"><span class="sub-item">Quản lý Thanh Toán</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- Quản lý tài khoản bảo mật -->
+                        @{
+                            var isAccountActive = ViewData["ActivePage"]?.ToString() == "AccountManager";
+                        }
+                        <li class="nav-item @(isAccountActive ? "active" : "")">
+                            <a data-bs-toggle="collapse" href="#accountManagerMenu">
+                                <i class="fas fa-user-shield"></i>
+                                <p>Tài khoản & Quyền</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse @(isAccountActive ? "show" : "")" id="accountManagerMenu">
+                                <ul class="nav nav-collapse">
+                                    <li><a asp-area="admin" asp-controller="Account" asp-action="Index"><span class="sub-item">Quản lý Tài Khoản</span></a></li>
+                                    <li><a asp-area="admin" asp-controller="Role" asp-action="Index"><span class="sub-item">Quản lý Quyền</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-panel">
+            <div class="main-header">
+                <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+                            <li class="nav-item topbar-user dropdown hidden-caret">
+                                <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#">
+                                    <div class="avatar-sm">
+                                        <img src="~/admin/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle" />
+                                    </div>
+                                    <span class="profile-username">
+                                        <span class="op-7">Xin chào,</span>
+                                        <span class="fw-bold UserNameText">@(Context.Session.GetString("UserName") ?? "Admin")</span>
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user animated fadeIn">
+                                    <li>
+                                        <a class="dropdown-item" href="#">My Profile</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="container">
+                <div class="page-inner">
+                    @RenderBody()
+                </div>
+            </div>
+
+            <footer class="footer">
+                <div class="container-fluid d-flex justify-content-between">
+                    <div class="copyright">
+                        2026, made with <i class="fa fa-heart heart text-danger"></i> by Duy Nguyễn
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Core JS Files -->
+    <script src="~/admin/assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="~/admin/assets/js/core/popper.min.js"></script>
+    <script src="~/admin/assets/js/core/bootstrap.min.js"></script>
+    <script src="~/admin/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="~/admin/assets/js/plugin/datatables/datatables.min.js"></script>
+    <script src="~/admin/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+    <script src="~/admin/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+    <script src="~/admin/assets/js/kaiadmin.min.js"></script>
+
+    <!-- Notification Logic -->
+    <script>
+        $(document).ready(function () {
+            var state = "@TempData["NotificationType"]";
+            var title = "@TempData["NotificationTitle"]";
+            var message = "@TempData["NotificationMessage"]";
+
+            if (message) {
+                var icon = state === "success" ? "fa-check" : (state === "danger" ? "fa-times" : "fa-exclamation");
+                $.notify({
+                    title: title,
+                    message: message,
+                    icon: 'fa ' + icon
+                }, {
+                    type: state,
+                    placement: { from: "top", align: "right" },
+                    time: 1000,
+                    delay: 2000
+                });
+            }
+        });
+    </script>
+
+    @RenderSection("Script", required: false)
+</body>
+</html>

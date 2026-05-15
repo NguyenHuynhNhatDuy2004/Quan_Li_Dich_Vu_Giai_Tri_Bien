@@ -1,0 +1,105 @@
+﻿@model QuanLiDichVuBien.Areas.clients.Models.UserVM
+
+@{
+    Layout = "~/Areas/clients/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Thông tin cá nhân";
+}
+
+<div class="user-profile" style="margin-top: 150px; margin-bottom: 100px;">
+    <div class="container-xl px-4 mt-4">
+        <div class="row">
+            <div class="col-xl-4">
+                <div class="card mb-4 mb-xl-0">
+                    <div class="card-header">Ảnh đại diện</div>
+                    <div class="card-body text-center">
+                        <img id="avatarPreview" class="img-account-profile rounded-circle mb-2"
+                             src="~/admin/assets/images/user-profile/@Model.Avatar"
+                             style="width:160px; height: 160px; object-fit: cover;" alt="Ảnh đại diện">
+
+                        <div class="small font-italic text-muted mb-4">JPG hoặc PNG không lớn hơn 5 MB</div>
+                        <input type="file" name="avatar" id="avatar" style="display: none" accept="image/*">
+
+                        @* Các link ẩn dùng cho JavaScript *@
+                        <input type="hidden" value="@Url.Action("ChangeAvatar", "UserProfile")" class="label_avatar">
+
+                        <label for="avatar" class="btn btn-primary">Tải ảnh lên</label>
+                    </div>
+                </div>
+
+                <div class="card mt-4 mb-4 mb-xl-0">
+                    <button class="btn btn-primary" id="update_password_profile">Đổi mật khẩu</button>
+                </div>
+            </div>
+            <div class="col-xl-8">
+                <div class="card mb-4">
+                    <div class="card-header">Thông tin tài khoản</div>
+                    <div class="card-body">
+                        <form asp-area="clients" asp-controller="UserProfile" asp-action="UpdateProfile" method="POST" class="updateUser">
+                            @Html.AntiForgeryToken()
+                            <div class="row gx-3 mb-3">
+                                <div class="col-md-12">
+                                    <label class="small mb-1" for="inputFullName">Họ và tên</label>
+                                    <input class="form-control" id="inputFullName" type="text"
+                                           placeholder="Họ và tên" value="@Model.FullName" required>
+                                </div>
+                            </div>
+                            <div class="row gx-3 mb-3">
+                                <div class="col-md-12">
+                                    <label class="small mb-1" for="inputLocation">Địa chỉ</label>
+                                    <input class="form-control" id="inputLocation" type="text" placeholder="Địa chỉ"
+                                           value="@Model.Address" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputEmailAddress">Email</label>
+                                <input class="form-control" id="inputEmailAddress" type="email" placeholder="Email"
+                                       value="@Model.Email" required>
+                            </div>
+                            <div class="row gx-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputPhone">Số điện thoại</label>
+                                    <input class="form-control" id="inputPhone" type="text"
+                                           placeholder="Số điện thoại" value="@Model.PhoneNumber" required>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary" type="submit" id="update_profile">Lưu thông tin</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card mb-4" id="card_change_password" style="display:none;">
+                    <div class="card-body">
+                        <div class="invalid-feedback" style="margin-top:-15px" id="validate_password"></div>
+                        <form asp-area="clients" asp-controller="UserProfile" asp-action="ChangePassword" method="post" class="change_password_profile">
+                            @Html.AntiForgeryToken()
+                            <div class="row gx-3 align-items-end">
+                                <div class="col-md-4">
+                                    <label class="small mb-1">Mật khẩu cũ</label>
+                                    <input class="form-control" id="inputOldPass" type="password" placeholder="Mật khẩu cũ" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="small mb-1">Mật khẩu mới</label>
+                                    <input class="form-control" id="inputNewPass" type="password" placeholder="Mật khẩu mới" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <button class="btn btn-primary w-100" type="submit">Thay đổi</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Logic đơn giản để hiện form đổi mật khẩu khi nhấn nút
+        document.getElementById('update_password_profile').addEventListener('click', function() {
+            var card = document.getElementById('card_change_password');
+            card.style.display = card.style.display === 'none' ? 'block' : 'none';
+        });
+    </script>
+}

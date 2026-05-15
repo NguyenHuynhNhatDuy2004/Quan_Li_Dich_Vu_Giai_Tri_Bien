@@ -1,0 +1,183 @@
+﻿@model List<QuanLiDichVuBien.Areas.admin.Models.AccountViewModel>
+@{
+    ViewData["Title"] = "Danh sách User";
+}
+
+<div class="page-header">
+    <h3 class="fw-bold mb-3">Danh sách đặt Tour</h3>
+    <ul class="breadcrumbs mb-3">
+        <li class="nav-home">
+            <a asp-area="admin"
+               asp-controller="Home"
+               asp-action="Index">
+                <i class="icon-home"></i>
+            </a>
+        </li>
+        <li class="separator">
+            <i class="icon-arrow-right"></i>
+        </li>
+        <li class="nav-item active">
+            Accounts
+        </li>
+    </ul>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Danh sách Filters</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="multi-filter-select"
+                           class="display table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>UserName</th>
+                                <th>Password</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Roles</th>
+                                <th>isActive</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>STT</th>
+                                <th>UserName</th>
+                                <th>Password</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Roles</th>
+                                <th>isActive</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @for(int i =0;i<Model.Count;i++){
+                                <tr>
+                                    <td>@(i + 1)</td>
+                                    <td>@Model[i].Username</td>
+                                    <td>@Model[i].Password</td>
+                                    <td>@Model[i].Email</td>
+                                    <td>@Model[i].Phone</td>
+                                    <th>
+                                        @foreach (var role in @Model[i].Roles)
+                                        {
+                                            @role
+
+                                            <br />
+                                        }
+                                    </th>
+                                    <td>@Model[i].isActive</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Danh sách chi tiết</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="add-row"
+                           class="display table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>UserName</th>
+                                <th>Password</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Roles</th>
+                                <th>isActive</th>
+                                <th style="width: 10%">Action</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>STT</th>
+                                <th>UserName</th>
+                                <th>Password</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Roles</th>
+                                <th>isActive</th>
+                                <th>Action</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @for (int i = 0; i < Model.Count; i++)
+                            {
+                                <tr>
+                                    <td>@(i + 1)</td>
+                                    <td>@Model[i].Username</td>
+                                    <td>@Model[i].Password</td>
+                                    <td>@Model[i].Email</td>
+                                    <td>@Model[i].Phone</td>
+                                    <th>
+                                        @foreach (var role in @Model[i].Roles)
+                                        {
+                                            @role
+
+                                            <br />
+                                        }
+                                    </th>
+                                    <td>@Model[i].isActive</td>
+                                    <td>
+                                        <div class="form-button-action">
+                                            <a class="btn btn-link btn-primary" type="button"
+                                               asp-area="admin"
+                                               asp-route-userId=@Model[i].Id
+                                               asp-controller="Account"
+                                               asp-action="ChangePassword">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+
+                                            <a class="btn btn-link btn-warning" type="button"
+                                               asp-area="admin"
+                                               asp-route-userId=@Model[i].Id
+                                               asp-controller="Role"
+                                               asp-action="ChangeRole">
+                                                <i class="fas fa-award"></i>
+                                            </a>
+
+                                            <a class="btn btn-link @((Model[i].isActive) ? "btn-success" : "btn-danger")"
+                                               type="button"
+                                               asp-area="admin"
+                                               asp-route-userId="@Model[i].Id"
+                                               asp-controller="Account"
+                                               asp-action="BlockUser">
+                                                @if (Model[i].isActive)
+                                                {
+                                                    <i class="fas fa-check-circle"></i>
+
+                                                }
+                                                else
+                                                {
+                                                    <i class="fas fa-ban"></i>
+
+                                                }
+                                            </a>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

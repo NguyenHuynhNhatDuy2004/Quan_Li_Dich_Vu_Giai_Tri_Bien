@@ -1,0 +1,161 @@
+﻿@model List<QuanLiDichVuBien.Areas.admin.Models.PaymentViewModel>
+@{
+    ViewData["Title"] = "Danh sách thanh toán";
+}
+
+<div class="page-header">
+    <h3 class="fw-bold mb-3">Danh sách Đánh Giá</h3>
+    <ul class="breadcrumbs mb-3">
+        <li class="nav-home">
+            <a asp-area="admin"
+               asp-controller="Home"
+               asp-action="Index">
+                <i class="icon-home"></i>
+            </a>
+        </li>
+        <li class="separator">
+            <i class="icon-arrow-right"></i>
+        </li>
+        <li class="nav-item active">
+            Payments
+        </li>
+    </ul>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Danh sách Filters</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="multi-filter-select"
+                           class="display table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Booking ID</th>
+                                <th>Method</th>
+                                <th>CreateAt</th>
+                                <th>ModifyAt</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>STT</th>
+                                <th>Booking ID</th>
+                                <th>Method</th>
+                                <th>CreateAt</th>
+                                <th>ModifyAt</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @for (int i = 0; i < Model.Count; i++)
+                            {
+                                <tr>
+                                    <td>@(i + 1)</td>
+                                    <td>@Model[i].BookingID</td>
+                                    <td>@Model[i].Method</td>
+                                    <td>@Model[i].CreateAt.ToString("dd/MM/yyyy HH:mm tt")</td>
+                                    <td>@Model[i].ModifyAt.ToString("dd/MM/yyyy HH:mm tt")</td>
+                                    <td>@string.Format("{0:N0}₫", Model[i].Total)</td>
+                                    <td>
+                                        @if (Model[i].Status)
+                                        {
+                                            <span class="badge badge-success">Completed</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-danger">Pending</span>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex align-items-center">
+                    <h4 class="card-title">Thông tin chi tiết</h4>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="add-row"
+                           class="display table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Booking ID</th>
+                                <th>Method</th>
+                                <th>CreateAt</th>
+                                <th>ModifyAt</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th style="width: 10%">Action</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>STT</th>
+                                <th>Booking ID</th>
+                                <th>Method</th>
+                                <th>CreateAt</th>
+                                <th>ModifyAt</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @for (int i = 0; i < Model.Count; i++)
+                            {
+                                <tr>
+                                    <td>@(i + 1)</td>
+                                    <td>@Model[i].BookingID</td>
+                                    <td>@Model[i].Method</td>
+                                    <td>@Model[i].CreateAt.ToString("dd/MM/yyyy HH:mm tt")</td>
+                                    <td>@Model[i].ModifyAt.ToString("dd/MM/yyyy HH:mm tt")</td>
+                                    <td>@string.Format("{0:N0}₫", Model[i].Total)</td>
+                                    <td>
+                                        @if (Model[i].Status)
+                                        {
+                                            <span class="badge badge-success">Completed</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-danger">Pending</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        <div class="form-button-action">
+                                            <a class="btn btn-link btn-primary" type="button"
+                                               asp-area="admin"
+                                               asp-route-PaymentID=@Model[i].PaymentID
+                                               asp-controller="Payment"
+                                               asp-action="Update">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

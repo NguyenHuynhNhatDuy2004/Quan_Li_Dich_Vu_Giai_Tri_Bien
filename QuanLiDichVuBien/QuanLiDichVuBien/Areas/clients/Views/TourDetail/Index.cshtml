@@ -1,0 +1,612 @@
+﻿@model QuanLiDichVuBien.Areas.clients.Models.ViewModels.TourDetailViewModel
+
+@{
+    Layout = "~/Areas/clients/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Chi tiết dịch vụ";
+    string hideReview = Model.CanReview ? "" : "hide";
+}
+
+<partial name="~/Areas/clients/Views/Shared/Blocks/_HeaderHome.cshtml" />
+<partial name="~/Areas/clients/Views/Shared/Blocks/_BannerHome.cshtml" />
+
+<!-- Banner -->
+<section class="page-banner-two rel z-1">
+    <div class="container-fluid">
+        <hr class="mt-0">
+
+        <div class="container">
+            <div class="banner-inner pt-15 pb-25">
+
+                <h2 class="page-title mb-10"
+                    data-aos="fade-left"
+                    data-aos-duration="1500"
+                    data-aos-offset="50">
+
+                    @Model.Destination
+                </h2>
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center mb-20"
+                        data-aos="fade-right"
+                        data-aos-delay="200"
+                        data-aos-duration="1500"
+                        data-aos-offset="50">
+
+                        <li class="breadcrumb-item">
+                            <a href="@Url.Action("Index", "Home", new { area = "clients" })">
+                                Trang chủ
+                            </a>
+                        </li>
+
+                        <li class="breadcrumb-item">
+                            <a href="@Url.Action("Index", "Tours", new { area = "clients" })">
+                                Dịch vụ biển
+                            </a>
+                        </li>
+
+                        <li class="breadcrumb-item active">
+                            Chi tiết dịch vụ
+                        </li>
+                    </ol>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery -->
+<div class="tour-gallery">
+    <div class="container-fluid">
+
+        <div class="row gap-10 justify-content-center rel">
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="gallery-item">
+                    <img src="~/admin/assets/images/gallery-tours/@Model.Images[0]"
+                         alt="Service">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="~/admin/assets/images/gallery-tours/@Model.Images[1]"
+                         alt="Service">
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="gallery-item gallery-between">
+                    <img src="~/admin/assets/images/gallery-tours/@Model.Images[2]"
+                         alt="Service">
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="gallery-item">
+                    <img src="~/admin/assets/images/gallery-tours/@Model.Images[3]"
+                         alt="Service">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="~/admin/assets/images/gallery-tours/@Model.Images[4]"
+                         alt="Service">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Header -->
+<section class="tour-header-area pt-70 rel z-1">
+    <div class="container">
+
+        <div class="row justify-content-between">
+
+            <div class="col-xl-6 col-lg-7">
+
+                <div class="tour-header-content mb-15"
+                     data-aos="fade-left"
+                     data-aos-duration="1500"
+                     data-aos-offset="50">
+
+                    <span class="location d-inline-block mb-10">
+                        <i class="fal fa-map-marker-alt"></i>
+                        @Model.Destination
+                    </span>
+
+                    <div class="section-title pb-5">
+                        <h2>@Model.Title</h2>
+                    </div>
+
+                    <div class="ratting">
+
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            if (i < (int)Model.AverageStar)
+                            {
+                                <i class="fas fa-star"></i>
+                            }
+                            else
+                            {
+                                <i class="far fa-star"></i>
+                            }
+                        }
+
+                        <span class="ms-2">
+                            (@Model.ReviewCount đánh giá)
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-xl-4 col-lg-5 text-lg-end"
+                 data-aos="fade-right"
+                 data-aos-duration="1500"
+                 data-aos-offset="50">
+
+                <div class="tour-header-social mb-10">
+
+                    <a href="#">
+                        <i class="far fa-share-alt"></i>
+                        Chia sẻ dịch vụ
+                    </a>
+
+                    <a href="#">
+                        <i class="fas fa-heart bgc-secondary"></i>
+                        Yêu thích
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr class="mt-50 mb-70">
+
+    </div>
+</section>
+
+<!-- Details -->
+<section class="tour-details-page pb-100">
+
+    <div class="container">
+
+        <div class="row">
+
+            <!-- LEFT -->
+            <div class="col-lg-8">
+
+                <div class="tour-details-content">
+
+                    <h3>Thông tin dịch vụ</h3>
+
+                    <p>@Html.Raw(Model.Description)</p>
+
+                    <div class="row pb-55">
+
+                        <!-- Bao gồm -->
+                        <div class="col-md-6">
+
+                            <div class="tour-include-exclude mt-30">
+
+                                <h5>Bao gồm</h5>
+
+                                <ul class="list-style-one check mt-25">
+
+                                    <li>
+                                        <i class="far fa-check"></i>
+                                        Áo phao bảo hộ
+                                    </li>
+
+                                    <li>
+                                        <i class="far fa-check"></i>
+                                        Hướng dẫn viên chuyên nghiệp
+                                    </li>
+
+                                    <li>
+                                        <i class="far fa-check"></i>
+                                        Thiết bị đạt chuẩn an toàn
+                                    </li>
+
+                                    <li>
+                                        <i class="far fa-check"></i>
+                                        Hỗ trợ kỹ thuật trực tiếp
+                                    </li>
+
+                                    <li>
+                                        <i class="far fa-check"></i>
+                                        Nước uống miễn phí
+                                    </li>
+
+                                    <li>
+                                        <i class="far fa-check"></i>
+                                        Chụp ảnh check-in
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Không bao gồm -->
+                        <div class="col-md-6">
+
+                            <div class="tour-include-exclude mt-30">
+
+                                <h5>Không bao gồm</h5>
+
+                                <ul class="list-style-one mt-25">
+
+                                    <li>
+                                        <i class="far fa-times"></i>
+                                        Chi phí ăn uống cá nhân
+                                    </li>
+
+                                    <li>
+                                        <i class="far fa-times"></i>
+                                        Quay flycam riêng
+                                    </li>
+
+                                    <li>
+                                        <i class="far fa-times"></i>
+                                        Bảo hiểm nâng cao
+                                    </li>
+
+                                    <li>
+                                        <i class="far fa-times"></i>
+                                        Thuê tủ giữ đồ
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Timeline -->
+                <h3>Quy trình trải nghiệm</h3>
+
+                <div class="accordion-two mt-25 mb-60"
+                     id="faq-accordion-two">
+
+                    @{
+                        int step = 1;
+                    }
+
+                    @foreach (var timeline in Model.Timeline)
+                    {
+                        <div class="accordion-item">
+
+                            <h5 class="accordion-header">
+
+                                <button class="accordion-button collapsed"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo@(timeline.TimeLineId)">
+
+                                    Bước @(step++) - @timeline.Title
+
+                                </button>
+
+                            </h5>
+
+                            <div id="collapseTwo@(timeline.TimeLineId)"
+                                 class="accordion-collapse collapse"
+                                 data-bs-parent="#faq-accordion-two">
+
+                                <div class="accordion-body">
+
+                                    <p>
+                                        @Html.Raw(timeline.Description)
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    }
+
+                </div>
+
+                <!-- Reviews -->
+                <div id="partials_reviews">
+
+                    @await Html.PartialAsync(
+                    "~/Areas/clients/Views/Partials/_Reviews.cshtml",
+                                        Model)
+
+                </div>
+
+                <!-- Add Review -->
+                <h3 class="@hideReview">
+                    Đánh giá dịch vụ
+                </h3>
+
+                <form id="comment-form"
+                      class="comment-form bgc-lighter z-1 rel mt-30 @hideReview"
+                      asp-action="Reviews"
+                      asp-controller="TourDetail"
+                      asp-area="clients"
+                      method="post">
+
+                    @Html.AntiForgeryToken()
+
+                    <input type="hidden"
+                           name="tourId"
+                           value="@Model.TourId">
+
+                    <div class="comment-review-wrap">
+
+                        <div class="comment-ratting-item">
+
+                            <span class="title">
+                                Đánh giá của bạn
+                            </span>
+
+                            <div class="ratting" id="rating-stars">
+
+                                @for (int s = 1; s <= 5; s++)
+                                                                {
+                                    <i class="far fa-star"
+                                       data-value="@s"></i>
+                                }
+
+                            </div>
+
+                            <input type="hidden"
+                                   name="rating"
+                                   id="rating-value"
+                                   value="0">
+
+                        </div>
+
+                    </div>
+
+                    <hr class="mt-30 mb-40">
+
+                    <h5>Để lại phản hồi</h5>
+
+                    <div class="row gap-20 mt-20">
+
+                        <div class="col-md-12">
+
+                            <div class="form-group">
+
+                                <label for="message">
+                                    Nội dung đánh giá
+                                </label>
+
+                                <textarea name="message"
+                                          id="message"
+                                          class="form-control"
+                                          rows="5"
+                                          required></textarea>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-12">
+
+                            <div class="form-group mb-0">
+
+                                <button type="submit"
+                                        class="theme-btn bgc-secondary style-two">
+
+                                    <span data-hover="Gửi đánh giá">
+                                        Gửi đánh giá
+                                    </span>
+
+                                    <i class="fal fa-arrow-right"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- RIGHT -->
+            <div class="col-lg-4 col-md-8 col-sm-10 rmt-75">
+
+                <div class="blog-sidebar tour-sidebar">
+
+                    <!-- Booking -->
+                    <div class="widget widget-booking"
+                         data-aos="fade-up"
+                         data-aos-duration="1500"
+                         data-aos-offset="50">
+
+                        <h5 class="widget-title">
+                            Đặt dịch vụ
+                        </h5>
+
+                        <form asp-action="Booking"
+                              asp-controller="TourDetail"
+                              asp-area="clients"
+                              asp-route-id="@Model.TourId"
+                              method="post">
+
+                            @Html.AntiForgeryToken()
+
+                            <div class="date mb-25">
+
+                                <b>Ngày sử dụng</b>
+
+                                <input type="text"
+                                       value="@Model.StartDate.ToString("dd-MM-yyyy")"
+                                       disabled>
+
+                            </div>
+
+                            <hr>
+
+                            <div class="time py-5">
+
+                                <b>Thời lượng :</b>
+
+                                <p>@Model.Time</p>
+
+                            </div>
+
+                            <hr class="mb-25">
+
+                            <h6>Giá dịch vụ</h6>
+
+                            <ul class="tickets clearfix">
+
+                                <li>
+                                    Người lớn
+                                    <span class="price">
+                                        @Model.PriceAdult.ToString("N0") VNĐ
+                                    </span>
+                                </li>
+
+                                <li>
+                                    Trẻ em
+                                    <span class="price">
+                                        @Model.PriceChild.ToString("N0") VNĐ
+                                    </span>
+                                </li>
+
+                            </ul>
+
+                            <button type="submit"
+                                    class="theme-btn style-two w-100 mt-15 mb-5">
+
+                                <span data-hover="Đặt dịch vụ">
+                                    Đặt dịch vụ
+                                </span>
+
+                                <i class="fal fa-arrow-right"></i>
+
+                            </button>
+
+                            <div class="text-center">
+
+                                <a href="@Url.Action("Index", "Contact", new { area = "clients" })">
+                                    Bạn cần trợ giúp?
+                                </a>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="widget widget-contact">
+
+                        <h5 class="widget-title">
+                            Liên hệ hỗ trợ
+                        </h5>
+
+                        <ul class="list-style-one">
+
+                            <li>
+                                <i class="far fa-envelope"></i>
+
+                                <a href="mailto:info@travela.vn">
+                                    info@travela.vn
+                                </a>
+                            </li>
+
+                            <li>
+                                <i class="far fa-phone-volume"></i>
+
+                                <a href="tel:+84901234567">
+                                    +84 901 234 567
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <!-- Related -->
+                    @if (Model.RelatedTours.Any())
+                    {
+                        <div class="widget widget-tour">
+
+                            <h6 class="widget-title">
+                                Dịch vụ liên quan
+                            </h6>
+
+                            @foreach (var tour in Model.RelatedTours)
+                            {
+                                <div class="destination-item tour-grid style-three bgc-lighter">
+
+                                    <div class="image">
+
+                                        <img src="~/admin/assets/images/gallery-tours/@tour.Images[0]"
+                                             alt="Service"
+                                             style="max-height:137px">
+
+                                    </div>
+
+                                    <div class="content">
+
+                                        <div class="destination-header">
+
+                                            <span class="location">
+                                                <i class="fal fa-map-marker-alt"></i>
+                                                @tour.Destination
+                                            </span>
+
+                                            <div class="ratting">
+                                                <i class="fas fa-star"></i>
+                                                <span>(@tour.Rating)</span>
+                                            </div>
+
+                                        </div>
+
+                                        <h6>
+
+                                            <a href="@Url.Action("Index", "TourDetail",
+                                                                                                    new { area = "clients", id = tour.TourId })">
+
+                                        @tour.Title
+
+                                            </a>
+
+                                        </h6>
+
+                                    </div>
+
+                                </div>
+                                                }
+
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<partial name="~/Areas/clients/Views/Shared/Blocks/_FooterHome.cshtml" />

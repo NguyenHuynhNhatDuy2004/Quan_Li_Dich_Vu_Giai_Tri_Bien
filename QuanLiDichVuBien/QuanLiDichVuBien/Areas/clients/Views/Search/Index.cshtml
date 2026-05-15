@@ -1,0 +1,119 @@
+﻿@{
+    Layout = "~/Areas/clients/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Danh sách Tour";
+}
+
+<partial name="~/Areas/clients/Views/Shared/Blocks/_HeaderHome.cshtml" />
+<partial name="~/Areas/clients/Views/Shared/Blocks/_BannerHome.cshtml" />
+
+<section class="tour-grid-page py-100 rel z-2">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xl-4 col-md-6" style="margin-bottom: 30px">
+                <div class="destination-item tour-grid style-three bgc-lighter equal-block-fix" data-aos="fade-up"
+                     data-aos-duration="1500" data-aos-offset="50">
+                    <div class="image">
+                        <a href="#" class="heart"><i class="fas fa-heart"></i></a>
+                        <img src="~/admin/assets/images/gallery-tours/destination1.jpg" alt="Tour List">
+                    </div>
+                    <div class="content equal-content-fix">
+                        <div class="destination-header">
+                            <span class="location"><i class="fal fa-map-marker-alt"></i> Đà Nẵng</span>
+                            <div class="ratting">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <h5><a asp-area="clients" asp-controller="Tours" asp-action="Details" asp-route-id="1">Tour Khám Phá Ngũ Hành Sơn - Hội An</a></h5>
+                        <ul class="blog-meta">
+                            <li><i class="far fa-clock"></i> 3 Ngày 2 Đêm</li>
+                            <li><i class="far fa-user"></i> 10 chỗ</li>
+                        </ul>
+                        <div class="destination-footer">
+                            <span class="price"><span>3.500.000</span> VND / người</span>
+                            <a asp-area="clients" asp-controller="Tours" asp-action="Details" asp-route-id="1" class="theme-btn style-two style-three">
+                                <span data-hover="Đặt ngay">Đặt ngay</span>
+                                <i class="fal fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-md-6" style="margin-bottom: 30px">
+                <div class="destination-item tour-grid style-three bgc-lighter equal-block-fix" data-aos="fade-up"
+                     data-aos-duration="1500" data-aos-offset="50">
+                    <div class="image">
+                        <a href="#" class="heart"><i class="fas fa-heart"></i></a>
+                        <img src="~/admin/assets/images/gallery-tours/destination2.jpg" alt="Tour List">
+                    </div>
+                    <div class="content equal-content-fix">
+                        <div class="destination-header">
+                            <span class="location"><i class="fal fa-map-marker-alt"></i> Vịnh Hạ Long</span>
+                            <div class="ratting">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <h5><a asp-area="clients" asp-controller="Tours" asp-action="Details" asp-route-id="2">Du Thuyền Hạ Long Sang Trọng 5 Sao</a></h5>
+                        <ul class="blog-meta">
+                            <li><i class="far fa-clock"></i> 2 Ngày 1 Đêm</li>
+                            <li><i class="far fa-user"></i> 5 chỗ</li>
+                        </ul>
+                        <div class="destination-footer">
+                            <span class="price"><span>5.200.000</span> VND / người</span>
+                            <a asp-area="clients" asp-controller="Tours" asp-action="Details" asp-route-id="2" class="theme-btn style-two style-three">
+                                <span data-hover="Đặt ngay">Đặt ngay</span>
+                                <i class="fal fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-md-6" style="margin-bottom: 30px">
+                <div class="destination-item tour-grid style-three bgc-lighter equal-block-fix" data-aos="fade-up"
+                     data-aos-duration="1500" data-aos-offset="50">
+                    <div class="image">
+                        <a href="#" class="heart"><i class="fas fa-heart"></i></a>
+                        <img src="~/admin/assets/images/gallery-tours/destination3.jpg" alt="Tour List">
+                    </div>
+                    <div class="content equal-content-fix">
+                        <div class="destination-header">
+                            <span class="location"><i class="fal fa-map-marker-alt"></i> Phú Quốc</span>
+                            <div class="ratting">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <h5><a asp-area="clients" asp-controller="Tours" asp-action="Details" asp-route-id="3">Trải Nghiệm Đảo Ngọc Phú Quốc</a></h5>
+                        <ul class="blog-meta">
+                            <li><i class="far fa-clock"></i> 4 Ngày 3 Đêm</li>
+                            <li><i class="far fa-user"></i> 15 chỗ</li>
+                        </ul>
+                        <div class="destination-footer">
+                            <span class="price"><span>4.800.000</span> VND / người</span>
+                            <a asp-area="clients" asp-controller="Tours" asp-action="Details" asp-route-id="3" class="theme-btn style-two style-three">
+                                <span data-hover="Đặt ngay">Đặt ngay</span>
+                                <i class="fal fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<partial name="~/Areas/clients/Views/Shared/Blocks/_Newsletter.cshtml" />
+<partial name="~/Areas/clients/Views/Shared/Blocks/_FooterHome.cshtml" />

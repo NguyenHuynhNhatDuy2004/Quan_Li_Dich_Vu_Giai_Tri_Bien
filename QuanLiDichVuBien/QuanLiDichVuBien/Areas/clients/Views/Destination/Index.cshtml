@@ -1,0 +1,366 @@
+﻿@{
+    Layout = "~/Areas/clients/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Điểm Đến Giải Trí Biển";
+}
+
+<partial name="~/Areas/clients/Views/Shared/Blocks/_HeaderHome.cshtml" />
+<partial name="~/Areas/clients/Views/Shared/Blocks/_BannerHome.cshtml" />
+
+<!-- Popular Destinations Area start -->
+<section class="popular-destinations-area pt-100 pb-90 rel z-1">
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-12">
+
+                <div class="section-title text-center counter-text-wrap mb-40"
+                     data-aos="fade-up"
+                     data-aos-duration="1500"
+                     data-aos-offset="50">
+
+                    <h2>Khám phá các địa điểm giải trí biển nổi bật</h2>
+
+                    <p>
+                        Trải nghiệm những hoạt động biển hấp dẫn và không gian du lịch tuyệt đẹp tại Đà Nẵng
+                    </p>
+
+                    <ul class="destinations-nav mt-30">
+                        <li data-filter="*" class="active">Tất cả</li>
+                        <li data-filter=".domain-b">Biển nổi tiếng</li>
+                        <li data-filter=".domain-t">Giải trí biển</li>
+                        <li data-filter=".domain-n">Khám phá đảo</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <div class="row gap-10 destinations-active justify-content-center">
+
+                <!-- ITEM 1 -->
+                <div class="col-xl-3 col-md-6 item domain-b">
+
+                    <div class="destination-item style-two"
+                         data-aos-duration="1500"
+                         data-aos-offset="50">
+
+                        <div class="image" style="max-height: 250px">
+
+                            <a href="#" class="heart">
+                                <i class="fas fa-heart"></i>
+                            </a>
+
+                            <img src="~/admin/assets/images/gallery-tours/bai-bien-my-khe-da-nang1_0.jpg"
+                                 alt="Biển Mỹ Khê">
+
+                        </div>
+
+                        <div class="content">
+
+                            <h6 class="tour-title">
+
+                                <a asp-area="clients"
+                                   asp-controller="Blog"
+                                   asp-action="Details"
+                                   asp-route-id="1">
+
+                                    Biển Mỹ Khê - Thiên đường biển Đà Nẵng
+                                </a>
+
+                            </h6>
+
+                            <span class="time">
+                                Hoạt động cả ngày
+                            </span>
+
+                            <a asp-area="clients"
+                               asp-controller="Blog"
+                               asp-action="Details"
+                               asp-route-id="1"
+                               class="more">
+
+                                <i class="fas fa-chevron-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ITEM 2 -->
+                <div class="col-xl-3 col-md-6 item domain-t">
+
+                    <div class="destination-item style-two"
+                         data-aos-duration="1500"
+                         data-aos-offset="50">
+
+                        <div class="image" style="max-height: 250px">
+
+                            <a href="#" class="heart">
+                                <i class="fas fa-heart"></i>
+                            </a>
+
+                            <img src="~/admin/assets/images/gallery-tours/du_luon.jpg"
+                                 alt="Jetski">
+
+                        </div>
+
+                        <div class="content">
+
+                            <h6 class="tour-title">
+
+                                <a asp-area="clients"
+                                   asp-controller="Blog"
+                                   asp-action="Details"
+                                   asp-route-id="2">
+
+                                    Jetski & Flyboard tại biển Mỹ Khê
+                                </a>
+
+                            </h6>
+
+                            <span class="time">
+                                Trải nghiệm tốc độ trên biển
+                            </span>
+
+                            <a asp-area="clients"
+                               asp-controller="Blog"
+                               asp-action="Details"
+                               asp-route-id="2"
+                               class="more">
+
+                                <i class="fas fa-chevron-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ITEM 3 -->
+                <div class="col-md-6 item domain-n">
+
+                    <div class="destination-item style-two"
+                         data-aos-duration="1500"
+                         data-aos-offset="50">
+
+                        <div class="image" style="max-height: 250px">
+
+                            <a href="#" class="heart">
+                                <i class="fas fa-heart"></i>
+                            </a>
+
+                            <img src="~/admin/assets/images/gallery-tours/ban-dao-son-tra-thanh-pho-da-nang-viet-nam.jpg"
+                                 alt="Sơn Trà">
+
+                        </div>
+
+                        <div class="content">
+
+                            <h6 class="tour-title">
+
+                                <a asp-area="clients"
+                                   asp-controller="Blog"
+                                   asp-action="Details"
+                                   asp-route-id="3">
+
+                                    Khám phá bán đảo Sơn Trà
+                                </a>
+
+                            </h6>
+
+                            <span class="time">
+                                Cano & Lặn ngắm san hô
+                            </span>
+
+                            <a asp-area="clients"
+                               asp-controller="Blog"
+                               asp-action="Details"
+                               asp-route-id="3"
+                               class="more">
+
+                                <i class="fas fa-chevron-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ITEM 4 -->
+                <div class="col-xl-3 col-md-6 item domain-t">
+
+                    <div class="destination-item style-two"
+                         data-aos-duration="1500"
+                         data-aos-offset="50">
+
+                        <div class="image" style="max-height: 250px">
+
+                            <a href="#" class="heart">
+                                <i class="fas fa-heart"></i>
+                            </a>
+
+                            <img src="~/admin/assets/images/gallery-tours/blog2.jpg"
+                                 alt="SUP">
+
+                        </div>
+
+                        <div class="content">
+
+                            <h6 class="tour-title">
+
+                                <a asp-area="clients"
+                                   asp-controller="Blog"
+                                   asp-action="Details"
+                                   asp-route-id="4">
+
+                                    Chèo SUP ngắm bình minh
+                                </a>
+
+                            </h6>
+
+                            <span class="time">
+                                Trải nghiệm thư giãn buổi sáng
+                            </span>
+
+                            <a asp-area="clients"
+                               asp-controller="Blog"
+                               asp-action="Details"
+                               asp-route-id="4"
+                               class="more">
+
+                                <i class="fas fa-chevron-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ITEM 5 -->
+                <div class="col-xl-3 col-md-6 item domain-b">
+
+                    <div class="destination-item style-two"
+                         data-aos-duration="1500"
+                         data-aos-offset="50">
+
+                        <div class="image" style="max-height: 250px">
+
+                            <a href="#" class="heart">
+                                <i class="fas fa-heart"></i>
+                            </a>
+
+                            <img src="~/admin/assets/images/gallery-tours/bai-bien-non-nuoc-da-nang.jpg"
+                                 alt="Biển">
+
+                        </div>
+
+                        <div class="content">
+
+                            <h6 class="tour-title">
+
+                                <a asp-area="clients"
+                                   asp-controller="Blog"
+                                   asp-action="Details"
+                                   asp-route-id="5">
+
+                                    Bãi biển Non Nước thơ mộng
+                                </a>
+
+                            </h6>
+
+                            <span class="time">
+                                Không gian nghỉ dưỡng tuyệt đẹp
+                            </span>
+
+                            <a asp-area="clients"
+                               asp-controller="Blog"
+                               asp-action="Details"
+                               asp-route-id="5"
+                               class="more">
+
+                                <i class="fas fa-chevron-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ITEM 6 -->
+                <div class="col-md-6 item domain-n">
+
+                    <div class="destination-item style-two"
+                         data-aos-duration="1500"
+                         data-aos-offset="50">
+
+                        <div class="image" style="max-height: 250px">
+
+                            <a href="#" class="heart">
+                                <i class="fas fa-heart"></i>
+                            </a>
+
+                            <img src="~/admin/assets/images/gallery-tours/lan-ngam-san_ho.jpg"
+                                 alt="Lặn biển">
+
+                        </div>
+
+                        <div class="content">
+
+                            <h6 class="tour-title">
+
+                                <a asp-area="clients"
+                                   asp-controller="Blog"
+                                   asp-action="Details"
+                                   asp-route-id="6">
+
+                                    Tour lặn biển ngắm san hô Sơn Trà
+                                </a>
+
+                            </h6>
+
+                            <span class="time">
+                                Khám phá hệ sinh thái biển
+                            </span>
+
+                            <a asp-area="clients"
+                               asp-controller="Blog"
+                               asp-action="Details"
+                               asp-route-id="6"
+                               class="more">
+
+                                <i class="fas fa-chevron-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- Popular Destinations Area end -->
+
+<partial name="~/Areas/clients/Views/Shared/Blocks/_Newsletter.cshtml" />
+<partial name="~/Areas/clients/Views/Shared/Blocks/_FooterHome.cshtml" />

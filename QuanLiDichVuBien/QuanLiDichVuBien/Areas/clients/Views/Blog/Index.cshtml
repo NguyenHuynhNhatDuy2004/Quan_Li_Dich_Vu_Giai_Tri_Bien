@@ -1,0 +1,182 @@
+﻿@{
+    Layout = "~/Areas/clients/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Danh sách tin tức";
+}
+
+<partial name="~/Areas/clients/Views/Shared/Blocks/_HeaderHome.cshtml" />
+<partial name="~/Areas/clients/Views/Shared/Blocks/_BannerHome.cshtml" />
+
+<section class="blog-list-page py-100 rel z-1">
+    <div class="container">
+
+        <div class="row">
+
+            <!-- BLOG 1 -->
+            <div class="col-lg-4 col-md-6">
+
+                <div class="blog-item style-three"
+                     data-aos="fade-up"
+                     data-aos-duration="1500">
+
+                    <div class="image">
+                        <img src="~/admin/assets/images/gallery-tours/blog1.jpeg"
+                             alt="Blog">
+                    </div>
+
+                    <div class="content">
+
+                        <ul class="blog-meta">
+                            <li>
+                                <i class="far fa-calendar-alt"></i>
+                                25 Oct 2024
+                            </li>
+
+                            <li>
+                                <i class="far fa-comments"></i>
+                                5 Comments
+                            </li>
+                        </ul>
+
+                        <h5 class="title">
+                            <a asp-area="clients"
+                               asp-controller="Blog"
+                               asp-action="Details"
+                               asp-route-id="1">
+
+                                Top hoạt động giải trí biển hấp dẫn tại Đà Nẵng
+                            </a>
+                        </h5>
+
+                        <p>
+                            Khám phá các hoạt động nổi bật như Jetski, flyboard,
+                            chèo SUP và lặn biển tại thành phố biển Đà Nẵng.
+                        </p>
+
+                        <a asp-area="clients"
+                           asp-controller="Blog"
+                           asp-action="Details"
+                           asp-route-id="1"
+                           class="theme-btn style-two">
+
+                            <span>Đọc thêm</span>
+                            <i class="fal fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOG 2 -->
+            <div class="col-lg-4 col-md-6">
+
+                <div class="blog-item style-three"
+                     data-aos="fade-up"
+                     data-aos-delay="50"
+                     data-aos-duration="1500">
+
+                    <div class="image">
+                        <img src="~/admin/assets/images/gallery-tours/blog2.jpg"
+                             alt="Blog">
+                    </div>
+
+                    <div class="content">
+
+                        <ul class="blog-meta">
+                            <li>
+                                <i class="far fa-calendar-alt"></i>
+                                20 Oct 2024
+                            </li>
+
+                            <li>
+                                <i class="far fa-comments"></i>
+                                3 Comments
+                            </li>
+                        </ul>
+
+                        <h5 class="title">
+                            <a asp-area="clients"
+                               asp-controller="Blog"
+                               asp-action="Details"
+                               asp-route-id="2">
+
+                                Kinh nghiệm chèo SUP tại biển Mỹ Khê
+                            </a>
+                        </h5>
+
+                        <p>
+                            Hướng dẫn chi tiết dành cho người mới bắt đầu trải nghiệm
+                            chèo SUP tại bãi biển đẹp nhất Đà Nẵng.
+                        </p>
+
+                        <a asp-area="clients"
+                           asp-controller="Blog"
+                           asp-action="Details"
+                           asp-route-id="2"
+                           class="theme-btn style-two">
+
+                            <span>Đọc thêm</span>
+                            <i class="fal fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOG 3 -->
+            <div class="col-lg-4 col-md-6">
+
+                <div class="blog-item style-three"
+                     data-aos="fade-up"
+                     data-aos-delay="100"
+                     data-aos-duration="1500">
+
+                    <div class="image">
+                        <img src="~/admin/assets/images/gallery-tours/blog3.png"
+                             alt="Blog">
+                    </div>
+
+                    <div class="content">
+
+                        <ul class="blog-meta">
+                            <li>
+                                <i class="far fa-calendar-alt"></i>
+                                18 Oct 2024
+                            </li>
+
+                            <li>
+                                <i class="far fa-comments"></i>
+                                7 Comments
+                            </li>
+                        </ul>
+
+                        <h5 class="title">
+                            <a asp-area="clients"
+                               asp-controller="Blog"
+                               asp-action="Details"
+                               asp-route-id="3">
+
+                                Khám phá tour lặn ngắm san hô Sơn Trà
+                            </a>
+                        </h5>
+
+                        <p>
+                            Trải nghiệm hệ sinh thái biển tuyệt đẹp cùng tour
+                            cano và lặn ngắm san hô tại bán đảo Sơn Trà.
+                        </p>
+
+                        <a asp-area="clients"
+                           asp-controller="Blog"
+                           asp-action="Details"
+                           asp-route-id="3"
+                           class="theme-btn style-two">
+
+                            <span>Đọc thêm</span>
+                            <i class="fal fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<partial name="~/Areas/clients/Views/Shared/Blocks/_FooterHome.cshtml" />

@@ -1,0 +1,125 @@
+﻿@{
+    Layout = "~/Areas/clients/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Đặt Chuyến Đi";
+}
+
+<partial name="~/Areas/clients/Views/Shared/Blocks/_HeaderHome.cshtml" />
+<partial name="~/Areas/clients/Views/Shared/Blocks/_BannerHome.cshtml" />
+
+<section class="container" style="margin-top:50px; margin-bottom: 100px">
+    <form action="#" method="post" class="booking-container">
+        @Html.AntiForgeryToken()
+
+        <div class="row">
+            <!-- Cột bên trái: Thông tin khách hàng & Thanh toán -->
+            <div class="col-lg-8">
+                <div class="booking-info">
+                    <h2 class="booking-header">Thông Tin Liên Lạc</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>Họ và tên*</label>
+                            <input type="text" class="form-control" placeholder="Nhập Họ và tên" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>Email*</label>
+                            <input type="email" class="form-control" placeholder="sample@gmail.com" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>Số điện thoại*</label>
+                            <input type="text" class="form-control" placeholder="Nhập số điện thoại" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>Địa chỉ*</label>
+                            <input type="text" class="form-control" placeholder="Nhập địa chỉ" required>
+                        </div>
+                    </div>
+
+                    <h2 class="booking-header mt-4">Hành Khách</h2>
+                    <div class="d-flex gap-5 mb-4">
+                        <div class="quantity-selector">
+                            <label>Người lớn</label>
+                            <div class="input-group" style="width: 130px;">
+                                <button type="button" class="btn btn-outline-secondary">-</button>
+                                <input type="number" class="form-control text-center" value="1" readonly>
+                                <button type="button" class="btn btn-outline-secondary">+</button>
+                            </div>
+                        </div>
+                        <div class="quantity-selector">
+                            <label>Trẻ em</label>
+                            <div class="input-group" style="width: 130px;">
+                                <button type="button" class="btn btn-outline-secondary">-</button>
+                                <input type="number" class="form-control text-center" value="0" readonly>
+                                <button type="button" class="btn btn-outline-secondary">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="privacy-section p-3 bg-light rounded">
+                        <p class="small">Bằng cách nhấp chuột vào nút "Xác nhận", bạn đồng ý với các điều khoản của Travela.</p>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="agree" required>
+                            <label class="form-check-label" for="agree">Tôi đã đọc và đồng ý với điều khoản thanh toán</label>
+                        </div>
+                    </div>
+
+                    <h2 class="booking-header mt-4">Phương Thức Thanh Toán</h2>
+                    <div class="payment-options">
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="payment" id="p1" checked>
+                            <label class="form-check-label" for="p1">
+                                <img src="~/clients/assets/images/contact/icon.png" width="30"> Thanh toán tại văn phòng
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="payment" id="p2">
+                            <label class="form-check-label" for="p2">
+                                <img src="~/clients/assets/images/booking/cong-thanh-toan-paypal.jpg" width="30"> PayPal
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="payment" id="p3">
+                            <label class="form-check-label" for="p3">
+                                <img src="~/clients/assets/images/booking/thanh-toan-momo.jpg" width="30"> Ví MoMo
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cột bên phải: Tóm tắt đơn hàng -->
+            <div class="col-lg-4">
+                <div class="card p-4 shadow-sm">
+                    <h4 class="mb-3">Tóm tắt chuyến đi</h4>
+                    <p><strong>Mã tour:</strong> TOUR-DEMO-001</p>
+                    <h5 class="text-primary">Khám phá Vịnh Hạ Long - Đảo Tuần Châu</h5>
+                    <hr>
+                    <p><i class="fal fa-calendar-alt"></i> Khởi hành: 20/05/2026</p>
+                    <p><i class="fal fa-calendar-check"></i> Kết thúc: 23/05/2026</p>
+                    <p class="text-danger">Số chỗ còn nhận: 15</p>
+                    <hr>
+                    <div class="summary-details">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Người lớn: 1 x</span>
+                            <span>5.000.000 VNĐ</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Trẻ em: 0 x</span>
+                            <span>0 VNĐ</span>
+                        </div>
+                        <div class="d-flex justify-content-between fw-bold mt-3 border-top pt-2">
+                            <span>Tổng cộng:</span>
+                            <span class="text-success">5.000.000 VNĐ</span>
+                        </div>
+                    </div>
+                    <div class="input-group mt-3">
+                        <input type="text" class="form-control" placeholder="Mã giảm giá">
+                        <button class="btn btn-dark" type="button">Áp dụng</button>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mt-4 py-3 fw-bold">XÁC NHẬN ĐẶT TOUR</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+
+<partial name="~/Areas/clients/Views/Shared/Blocks/_FooterHome.cshtml" />

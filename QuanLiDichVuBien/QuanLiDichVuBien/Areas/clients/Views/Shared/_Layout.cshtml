@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewData["Title"] - Ravelo</title>
+    <link rel="shortcut icon" href="~/clients/assets/images/logos/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="~/clients/assets/css/flaticon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
+    <link rel="stylesheet" href="~/clients/assets/css/fontawesome-5.14.0.min.css">
+    <link rel="stylesheet" href="~/clients/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/clients/assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="~/clients/assets/css/nice-select.min.css">
+    <link rel="stylesheet" href="~/clients/assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="~/clients/assets/css/aos.css">
+    <link rel="stylesheet" href="~/clients/assets/css/slick.min.css">
+    <link rel="stylesheet" href="~/clients/assets/css/style.css">
+    <link rel="stylesheet" href="~/clients/assets/css/custom-css.css">
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="preloader"><div class="custom-loader"></div></div>
+        <partial name="~/Areas/clients/Views/Shared/Blocks/_HeaderHome.cshtml" />
+        @RenderBody()
+        <partial name="~/Areas/clients/Views/Shared/Blocks/_FooterHome.cshtml" />
+    </div>
+
+    <script src="~/clients/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="~/clients/assets/js/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+    <script src="~/clients/assets/js/bootstrap.min.js"></script>
+    <script src="~/clients/assets/js/appear.min.js"></script>
+    <script src="~/clients/assets/js/slick.min.js"></script>
+    <script src="~/clients/assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/clients/assets/js/jquery.nice-select.min.js"></script>
+    <script src="~/clients/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="~/clients/assets/js/skill.bars.jquery.min.js"></script>
+    <script src="~/clients/assets/js/isotope.pkgd.min.js"></script>
+    <script src="~/clients/assets/js/aos.js"></script>
+    <script src="~/clients/assets/js/script.js"></script>
+    <script src="~/clients/assets/js/custom-js.js"></script>
+    <script>
+        $(document).ready(function () {
+            if (typeof AOS !== 'undefined') {
+                AOS.init();
+            }
+            $("#userDropdown").off("click").on("click", function (e) {
+                e.stopPropagation();
+                $("#dropdownMenu").toggle();
+            });
+            $(document).on("click", function (e) {
+                if (!$(e.target).closest(".menu-sidebar").length) {
+                    $("#dropdownMenu").hide();
+                }
+            });
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
